@@ -22,7 +22,7 @@ const Test = () => {
     <div
       ref={containerRef}
       id="viewer"
-      style={{ width: '100%', height: '600px', borderRadius: '10px' }}
+      style={{ width: '100%', height: '90vh', borderRadius: '10px' }}
     />
   );
 };
