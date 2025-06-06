@@ -1,3 +1,10 @@
+import { FaXTwitter } from "react-icons/fa6";
+import { LuYoutube } from "react-icons/lu";
+import { FaWhatsapp } from "react-icons/fa";
+import { SlSocialFacebook } from "react-icons/sl";
+import { FaInstagram } from "react-icons/fa";
+
+
 const socialData = [
   {
     id: 1,
@@ -5,6 +12,7 @@ const socialData = [
     href: "https://www.facebook.com",
     iconClass: "fa-brands fa-facebook-f",
     alt: "Facebook",
+    item: <SlSocialFacebook />
   },
   {
     id: 2,
@@ -12,20 +20,35 @@ const socialData = [
     href: "https://www.twitter.com",
     iconClass: "fa-brands fa-twitter",
     alt: "Twitter",
+    item: <FaXTwitter />
+
   },
   {
     id: 3,
     cls: "social-lnkd",
     href: "https://www.linkedin.com",
     iconClass: "fa-brands fa-linkedin-in",
-    alt: "LinkedIn",
+    alt: "Whatsapp",
+    item: <FaWhatsapp />
+
   },
   {
     id: 4,
     cls: "social-yout",
     href: "https://www.youtube.com",
     iconClass: "fa-brands fa-youtube",
+    alt: "Instagram",
+    item: <FaInstagram />
+
+  },
+  {
+    id: 5,
+    cls: "social-yout",
+    href: "https://www.youtube.com",
+    iconClass: "fa-brands fa-youtube",
     alt: "YouTube",
+    item: <LuYoutube />
+
   },
 ];
 
@@ -34,7 +57,7 @@ export default function FooterSocial() {
     <>
       {socialData.map((item) => (
         <a key={item.id} className={item.cls} href={item.href} target="_blank">
-          <i className={item.iconClass}></i>
+          <i >{item.item}</i>
         </a>
       ))}
     </>
