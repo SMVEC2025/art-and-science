@@ -1,0 +1,59 @@
+.hod_main{
+    padding: 7rem 0;
+    background-color: #183a81;
+   .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 5rem;
+     
+        .left{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            img{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                border: 3px solid $primary-blue;
+                object-fit: cover;
+
+            }
+        }
+        h2,h3,p{
+            color: white;
+        }
+   }   
+}
+
+
+
+///faculty///
+
+.dept-faculty-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem 0 0 0  ;
+    h2{
+        color: $primary-blue;
+            font-family: "Playfair Display", serif;
+            font-size: 50px;
+            font-weight: 400;
+    }
+    p{
+        text-align: center;
+        max-width: 70%;
+    }
+    button{
+        background-color: $primary-blue;
+        color: white;
+        margin-top: 20px;
+        border-radius: 3px;
+        padding: 7px 20px;
+    }
+}

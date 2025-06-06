@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { IoMdPlay } from "react-icons/io";
 import video from '/assets/video/video.mp4'
-import TextLooper from "./Textlooper";
+import TextLooper from './TextLooper'
 
 
 function Hero() {

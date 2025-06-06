@@ -11,7 +11,7 @@ function About({data}) {
             <p>
               {data.para}
             </p>
-            <button>HOD and faculties</button>
+            <button>faculties</button>
             <button>Events</button>
         </div>
     </div>

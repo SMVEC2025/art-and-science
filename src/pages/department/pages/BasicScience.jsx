@@ -7,6 +7,8 @@ import HomeCta from '../../home/component/HomeCta'
 import HomeNewsAndEvents from '../../home/component/HomeNewsAndEvents'
 import MissionVision from '../component/MissionAndVision'
 import Navbar from '../../../components/header/Navbar'
+import HodSection from '../component/HodSection'
+import Faculty from '../component/Faculty'
 
 function BasicScience() {
 
@@ -44,8 +46,10 @@ function BasicScience() {
    
     <Home title="Department of Basic Science"/>
     <About data={aboutData}/>
+    <HodSection/>
     <MissionVision/>
     <Program programDetail={programDetails}/>
+    <Faculty/>
     <HomeNewsAndEvents title="SMVEC Events"/>
     <HomeCta/>
     
