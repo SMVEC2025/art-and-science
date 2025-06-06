@@ -10681,29 +10681,46 @@ body .ui-tooltip {
 }
 
 a:hover.social-fb {
-  border-color: #337FFF;
+  border-color: #0d65ff;
+  color: #0d65ff;
+
 }
 a:hover.social-twit {
-  border-color: #33CCFF;
+  border-color: black;
+  color: black;
+
 }
-a:hover.social-lnkd {
-  border-color: #006699;
+a:hover.social-wa {
+  border-color: #29d166;
+  color: #29d166;
+
 }
 a:hover.social-yout {
-  border-color: #FF3000;
+  border-color: #fc0137;
+  color: #fc0137;
+
+}
+a:hover.social-insta {
+  border-color: #ae31a1;
+  color: #ae31a1;
+
 }
 a.social-fb {
-  color: #337FFF;
+  color: #183a81;
 }
 a.social-twit {
-  color: #33CCFF;
+  color: #183a81;
 }
 a.social-lnkd {
-  color: #006699;
+  color: #183a81;
 }
 a.social-yout {
-  color: #FF3000;
+  color: #183a81;
 }
+a.social-insta {
+  color: #183a81;
+}
+
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .tp-footer-col-3 {
@@ -30820,4 +30837,3 @@ span.common-pale-purple {
   }
 }
 
-/*# sourceMappingURL=main.css.map */

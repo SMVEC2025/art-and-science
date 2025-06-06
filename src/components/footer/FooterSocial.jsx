@@ -25,7 +25,7 @@ const socialData = [
   },
   {
     id: 3,
-    cls: "social-lnkd",
+    cls: "social-wa",
     href: "https://www.linkedin.com",
     iconClass: "fa-brands fa-linkedin-in",
     alt: "Whatsapp",
@@ -34,7 +34,7 @@ const socialData = [
   },
   {
     id: 4,
-    cls: "social-yout",
+    cls: "social-insta",
     href: "https://www.youtube.com",
     iconClass: "fa-brands fa-youtube",
     alt: "Instagram",
@@ -55,11 +55,13 @@ const socialData = [
 export default function FooterSocial() {
   return (
     <>
-      {socialData.map((item) => (
+     <div style={{display:"flex",gap:"5px"}}>
+       {socialData.map((item) => (
         <a key={item.id} className={item.cls} href={item.href} target="_blank">
           <i >{item.item}</i>
         </a>
       ))}
+     </div>
     </>
   );
 }

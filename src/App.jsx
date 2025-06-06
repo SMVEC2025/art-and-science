@@ -15,6 +15,7 @@ import Footer from './components/footer/Footer';
 import BasicScience from './pages/department/pages/BasicScience';
 import ContactUs from './pages/contactus/Index';
 import Admission from './pages/admission/Index';
+import Test from './pages/home/component/Test';
 import MainLayout from './MainLayout';
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/department/basic-science" element={<BasicScience />} /> 
           <Route path="/admission" element={<Admission />} /> 
           <Route path="/contact-us" element={<ContactUs />} /> 
+          <Route path="/test" element={<Test />} /> 
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </MainLayout>
