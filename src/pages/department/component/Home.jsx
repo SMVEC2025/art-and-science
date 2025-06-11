@@ -13,14 +13,14 @@ function Home({title}) {
     const handleProgramClick = (linkurl) => {
         navigate(`/department/${linkurl}`);
     };
-
+  
     return (
         <header className='ug-header-main' style={{backgroundImage:"url('https://smvec.ac.in/wp-content/uploads/2024/06/Infrastructure_2.webp')"}}>
             <div className="content">
                 <h2>{title}</h2>
                 <p>This department fosters professional growth through industry-relevant training and real-world skill development. </p>
                 <div className="button-container">
-                   <button>Enquire Now</button>
+                   <button onClick={()=>{navigate('/admission')}}>Enquire Now</button>
                 </div>
             </div>
 

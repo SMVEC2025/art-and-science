@@ -78,6 +78,8 @@ function Navbar() {
               <span onClick={() => handleClick('/department/commerce')}>departments</span>
               <span onClick={() => handleClick('/faculty')}>Faculty</span>
               <span onClick={() => handleClick('/programs')}>Programs</span>
+              <span onClick={() => handleClick('/ug-programs')}>ug Programs</span>
+              <span onClick={() => handleClick('/pg-programs')}>pg Programs</span>
             </div>
           </div>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import Home from '../component/Home'
 import Footer from '../../../components/footer/Footer'
 import About from '../component/About'
@@ -10,7 +10,9 @@ import Navbar from '../../../components/header/Navbar'
 import HodSection from '../component/HodSection'
 import Faculty from '../component/Faculty'
 import { ProgramData } from '../../../data/ProgramData'
+import { AppContext } from '../../../context/AppContext'
 function Commerce() {
+  const {currentPage,setCurrentPage}=useContext(AppContext)
   const page = "commerce"
   const aboutData={
     heading:`Department of ${page}`,
@@ -22,6 +24,10 @@ function Commerce() {
     name:"Dr. Kavitha A",
     message:"The Department of Commerce has consistently improved its academic, research, and placement success. It provides a variety of innovatively created programs, with curricula that are continually updated to meet the changing needs of the industry and main stakeholders. Students are encouraged to participate in Internships and micro Projects as part of their curriculum to enhance their academic knowledge with real-world experience and are motivated to conduct and participate in events and get involved in activities of social relevance. With such inputs, our students are hardworking, practical-oriented, and effective in any work environment. The distinguished faculty members combine their academic excellence and real-world experience with dedication and commitment. I welcome you to be a part of our journey towards being a world-class center of excellence in education and research."
   }
+  useEffect(() => {
+    setCurrentPage(page)
+  }, [])
+  
   return (
    <>
     <Home title={`Department of ${page}`}/>
@@ -29,7 +35,7 @@ function Commerce() {
     <HodSection HodData={HodData}/>
     <MissionVision/>
     <Program programDetail={programDetails}/>
-    <Faculty dept="Department of Basic Sciences"/>
+    <Faculty dept="commerce"/>
     <HomeNewsAndEvents title="SMVEC Events"/>
     <HomeCta/>
    </>

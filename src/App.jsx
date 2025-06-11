@@ -5,8 +5,13 @@ import About from './pages/about/Index';
 import Faculty from './pages/faculty/Index';
 import AboutHistory from './pages/about-history/Index';
 import Campus from './pages/campus/Index';
-import UGPrograms from './pages/ug-programs/Index';
+
+//programs
+import AllPrograms from './pages/ug-programs/Index';
+import PgPrograms from './pages/ug-programs/PgPrograms';
+import UgPrograms from './pages/ug-programs/UgPrograms';
 import Events from './pages/events/Index';
+import EventDetails from './pages/event-details/Index';
 import Program from './pages/program-details/Index';
 import DepartmentOfBasicScience from './pages/department/pages/BasicScience';
 import './styles/main.scss'
@@ -49,11 +54,14 @@ function App() {
           <Route path="/about" element={<About />} /> 
           <Route path="/about/history" element={<AboutHistory />} /> 
           <Route path="/campus" element={<Campus />} /> 
-          <Route path="/programs" element={<UGPrograms />} /> 
+          <Route path="/programs" element={<AllPrograms />} /> 
+          <Route path="/ug-programs" element={<UgPrograms />} /> 
+          <Route path="/pg-programs" element={<PgPrograms />} /> 
           <Route path="/events" element={<Events />} /> 
+          <Route path="/event/:slug" element={<EventDetails />} /> 
           <Route path="/department/basic-science" element={<BasicScience />} /> 
-          <Route path="/admission" element={<Admission />} /> 
-          <Route path="/contact-us" element={<ContactUs />} /> 
+          <Route path="/admission" element={<Admission />}/>
+          <Route path="/contact-us" element={<ContactUs />}/> 
           <Route path="/test" element={<Test />} /> 
           {/* <Route path="*" element={<NotFound />} /> */}
 

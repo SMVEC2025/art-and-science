@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { AppContext } from '../../context/AppContext';
 
 function TopHeader() {
    const navigate = useNavigate();
+   const {currentPage} = useContext(AppContext)
 
    const handleNavigate=(val)=>{
       navigate(val)
@@ -16,7 +18,7 @@ function TopHeader() {
  <div className='right'>
     <span onClick={()=>handleNavigate('/campus')}>Campus</span>
     <span  onClick={()=>handleNavigate('/department/commerce')}>Departments</span>
-    <span  onClick={()=>handleNavigate('/faculty')}>Faculty</span>
+    <span  onClick={()=>handleNavigate(`/faculty${currentPage=='home'?'':`/${currentPage}`}`)}>Faculty</span>
     <span  onClick={()=>handleNavigate('')}>SMVEC</span>
     <span  onClick={()=>handleNavigate('/contact-us')}>Contact</span>
  </div>

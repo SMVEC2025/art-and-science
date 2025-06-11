@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function About({data}) {
+  const navigate = useNavigate();
   return (
     <div className='ug-about'>
         <div className='left'>
