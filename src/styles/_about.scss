@@ -286,6 +286,11 @@ flex-wrap: wrap;
     width: 100%;
     background-color: #f5f4ef;
     padding-bottom: 5rem;
+    flex-direction: column;
+    h3{
+        color: $primary-blue;
+        margin-bottom: 2rem;
+    }
 .table-container {
     width: 80%;
   font-family: 'Segoe UI', sans-serif;

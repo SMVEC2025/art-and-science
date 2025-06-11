@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-
-const AllEventSection = ({eventData}) => {
+import { IoLocationOutline } from "react-icons/io5";
+import { SlCalender } from "react-icons/sl";
+import TabSwitcher from "./TabSwitcher";
+const AllEventSection = ({ eventData }) => {
   const eventPerPage = 6;
-
+  const navigate = useNavigate()
   const [currentEventPage, setCurrentEventPage] = useState(1);
 
   const startEventIndex = (currentEventPage - 1) * eventPerPage;
@@ -20,98 +22,96 @@ const AllEventSection = ({eventData}) => {
   };
   return (
     <div className="events_main">
-        <section className="tf__event_page mt_190 xs_mt_95">
-      <div className="container">
-        <div className="row wow fadeInUp">
-          <div className="col-xl-6 col-md-8 col-lg-6 m-auto">
-            <div className="tf__heading_area mb_15">
-              <h5>OUR Upcoming Events</h5>
+      <TabSwitcher />
+      <section className="tf__event_page mt_50 xs_mt_50">
+        <div className="container">
+          <div className="row wow fadeInUp">
+            <div className="col-xl-6 col-md-8 col-lg-6 m-auto">
+              <div className="tf__heading_area mb_15">
+                <h5>OUR Upcoming Events</h5>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="row">
-          {currentEventItems.map((item) => (
-            <div className="col-xl-4 col-md-6 wow fadeInUp" key={item._id}>
-              <div className="tf__single_event">
-                <div className="tf__single_event_img">
-                  <img
-                    src={item.imgSrc.image}
-                    alt="event"
-                    className="img-fluid w-100"
-                  />
-                
-                </div>
-                <div className="tf__single_event_text">
-                  <ul>
-                    <li>
-                      <i className="far fa-map-marker-alt"></i> {item.location}
-                    </li>
-                    <li>
-                      <i className="far fa-clock"></i> {item.time}
-                    </li>
-                  </ul>
-                  <Link className="title" href={`/events/${item.slug}`}>
-                    {item.title}
-                  </Link>
-                  <p>{item.desc}</p>
-                  <div className="tf__single_event_footer">
-                    <button>View</button>
+          <div className="row">
+            {currentEventItems.map((item,index) => (
+              <div className="col-xl-4 col-md-6 wow fadeInUp" key={index}>
+                <div className="tf__single_event">
+                  <div className="tf__single_event_img">
+                    <img
+                      src={item?.acf?.image}
+                      alt="event"
+                      className="img-fluid w-100"
+                    />
+
+                  </div>
+                  <div className="tf__single_event_text">
+                    <ul>
+                      <li>
+                        <i ><IoLocationOutline /></i> pondicherry
+                      </li>
+                      <li>
+                        <i><SlCalender /></i> {item?.acf?.time}
+                      </li>
+                    </ul>
+                    <Link className="title" href={`/events/${item.slug}`}>
+                      {item?.acf?.name}
+                    </Link>
+                    <p className="pb-5">{item.desc}</p>
+                    <div className="tf__single_event_footer">
+                      <button onClick={() => (navigate(`/event/${item.slug}`))}>View</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-        <div className="tf__pagination mt_50">
-          <div className="row">
-            <div className="col-12">
-              <nav aria-label="Page navigation example">
-                <ul className="pagination">
-                  <li className="page-item">
-                    <a
-                      className={`page-link ${
-                        currentEventPage === 1 ? "disabled" : ""
-                      }`}
-                      aria-label="Previous"
-                      onClick={() =>
-                        handleEventPageChange(currentEventPage - 1)
-                      }
-                    >
-                      <i className="far fa-angle-left"></i>
-                    </a>
-                  </li>
-                  {Array.from({ length: totalEventPages }, (_, index) => (
-                    <li className="page-item" key={index}>
+            ))}
+          </div>
+          <div className="tf__pagination mt_50">
+            <div className="row">
+              <div className="col-12">
+                <nav aria-label="Page navigation example">
+                  <ul className="pagination">
+                    <li className="page-item">
                       <a
-                        className={`page-link ${
-                          currentEventPage === index + 1 ? "active" : ""
-                        }`}
-                        onClick={() => handleEventPageChange(index + 1)}
+                        className={`page-link ${currentEventPage === 1 ? "disabled" : ""
+                          }`}
+                        aria-label="Previous"
+                        onClick={() =>
+                          handleEventPageChange(currentEventPage - 1)
+                        }
                       >
-                        {index + 1}
+                        <i className="far fa-angle-left"></i>
                       </a>
                     </li>
-                  ))}
-                  <li className="page-item">
-                    <a
-                      className={`page-link ${
-                        currentEventPage === totalEventPages ? "disabled" : ""
-                      }`}
-                      aria-label="Next"
-                      onClick={() =>
-                        handleEventPageChange(currentEventPage + 1)
-                      }
-                    >
-                      <i className="far fa-angle-right"></i>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+                    {Array.from({ length: totalEventPages }, (_, index) => (
+                      <li className="page-item" key={index}>
+                        <a
+                          className={`page-link ${currentEventPage === index + 1 ? "active" : ""
+                            }`}
+                          onClick={() => handleEventPageChange(index + 1)}
+                        >
+                          {index + 1}
+                        </a>
+                      </li>
+                    ))}
+                    <li className="page-item">
+                      <a
+                        className={`page-link ${currentEventPage === totalEventPages ? "disabled" : ""
+                          }`}
+                        aria-label="Next"
+                        onClick={() =>
+                          handleEventPageChange(currentEventPage + 1)
+                        }
+                      >
+                        <i className="far fa-angle-right"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   );
 };

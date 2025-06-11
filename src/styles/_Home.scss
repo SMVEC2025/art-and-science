@@ -424,7 +424,17 @@
     padding: 10rem 0;
     padding-bottom: 15rem;
 
-
+  .event_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        background-color: $primary-blue;
+        color: rgb(243, 243, 243);
+        padding: 10px 20px;
+        margin-top: 1rem;
+    }
+  }
     .swiper {
         width: 80%;
         height: 100%;

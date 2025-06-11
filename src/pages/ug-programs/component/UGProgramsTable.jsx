@@ -1,7 +1,9 @@
 import { div } from 'framer-motion/client';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const UGProgramsTable = ({ data, category }) => {
+  const navigate = useNavigate();
   
  // Step 1: Filter data by UG or PG category
   const filteredData = data.filter(course => course.category === category);
@@ -14,9 +16,12 @@ const UGProgramsTable = ({ data, category }) => {
     return acc;
   }, {});
 
+  function handleNavigate(value) {
+    navigate(`/program/${value}`); 
+  }
   return (
     <div className='ug-program-table'>
-
+           <h3>{category} Programs</h3>
         <div className="table-container">
       <table className="ug-programs-table">
         <thead>
@@ -33,9 +38,9 @@ const UGProgramsTable = ({ data, category }) => {
                 <td className='cat-heading' colSpan="3">{departmentName}</td>
               </tr>
               {courses.map((program, i) => (
-                <tr key={i}>
-                  <td className='items'>{program.name}</td>
-                  <td className='items'>{program.fees[0].courseDuration}</td>
+                <tr key={i} onClick={()=>handleNavigate(program.name)}>
+                  <td className='items' >{program.name}</td>
+                  <td className='items' >{program.fees[0].courseDuration}</td>
                   <td className='items'>{program.fees[0].feePerYear}</td>
                   
                 </tr>

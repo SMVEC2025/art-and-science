@@ -9,39 +9,14 @@ import MissionVision from '../component/MissionAndVision'
 import Navbar from '../../../components/header/Navbar'
 import HodSection from '../component/HodSection'
 import Faculty from '../component/Faculty'
-
+import { ProgramData } from '../../../data/ProgramData'
 function BasicScience() {
-
+  const page = "Department of Basic Sciences"
   const aboutData={
-    heading:"Department of Basic Science",
+    heading:`Department of ${page}`,
     para:"The Department of Professional Studies at Sri Manakula Vinayagar Engineering College is a hub for excellence in career-focused education, designed to align students with industry standards and future career paths. Established with the vision to offer programs that combine academic rigor with real-world applicability, the department empowers students through a curriculum that integrates professional certifications, experiential learning, and industry exposure.At SMVEC, the Department of Professional Studies offers specialized undergraduate programs that blend foundational knowledge in arts and science with professional disciplines like Business Analytics, Digital Marketing, FinTech, Data Science, Aviation, Hospitality Management, and more. The programs are structured to meet the needs of today’s fast-evolving job markets, where interdisciplinary skills and adaptability are crucial."
   }
-  const programDetails=[
-    {
-      id:1,
-      name:"B.sc Physics",
-      type:"UG",
-      duration:"3",
-      dept:"Department of Basic Science"
-    },
-     {
-      id:2,
-      name:"B.sc Chemistry",
-      type:"UG",
-      duration:"3",
-      dept:"Department of Basic Science"
-
-    },
-     {
-      id:3,
-      name:"B.sc Mathematics",
-      type:"UG",
-      duration:"3",
-      dept:"Department of Basic Science"
-
-    }
-  ]
-
+  const programDetails=ProgramData?.filter(program => program.department.toLocaleLowerCase() == page.toLocaleLowerCase())
   const HodData={
     image:"https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2022/05/5-1-scaled.jpg",
     name:"Dr. Kavitha A",
@@ -49,12 +24,12 @@ function BasicScience() {
   }
   return (
    <>
-    <Home title="Department of Basic Science"/>
+    <Home title={`Department of ${page}`}/>
     <About data={aboutData}/>
     <HodSection HodData={HodData}/>
     <MissionVision/>
     <Program programDetail={programDetails}/>
-    <Faculty/>
+    <Faculty dept="Department of Basic Sciences"/>
     <HomeNewsAndEvents title="SMVEC Events"/>
     <HomeCta/>
    </>

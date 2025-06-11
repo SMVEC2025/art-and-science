@@ -16,10 +16,27 @@ import BasicScience from './pages/department/pages/BasicScience';
 import ContactUs from './pages/contactus/Index';
 import Admission from './pages/admission/Index';
 import Test from './pages/home/component/Test';
+import DepartmentFaculty from './pages/faculty/DepartmentFaculty';
 import MainLayout from './MainLayout';
+import { AppProvider } from './context/AppContext';
+//department pages
+import Commerce from './pages/department/pages/Commerce';
+import ComputationalStudies from './pages/department/pages/ComputationalStudies';
+import ManagementStudies from './pages/department/pages/ManagementStudies';
+import Physics from './pages/department/pages/Physics';
+import Chemistry from './pages/department/pages/Chemistry';
+import Mathematics from './pages/department/pages/Mathematics';
+import Tamil from './pages/department/pages/Tamil';
+import English from './pages/department/pages/English';
+import French from './pages/department/pages/French';
+import BioScience from './pages/department/pages/BioScience';
+import FoodScience from './pages/department/pages/FoodScience';
+import MediaStudies from './pages/department/pages/MediaStudies';
+
 function App() {
   return (
     <>
+    <AppProvider>
      <Router>
       <MainLayout>
         <Routes>
@@ -28,6 +45,7 @@ function App() {
           <Route path="/departments/department-of-basicscience" element={<DepartmentOfBasicScience />} /> 
           <Route path="/program/:program" element={<Program />} /> 
           <Route path="/faculty" element={<Faculty />} /> 
+          <Route path="/faculty/:dept" element={<DepartmentFaculty />} /> 
           <Route path="/about" element={<About />} /> 
           <Route path="/about/history" element={<AboutHistory />} /> 
           <Route path="/campus" element={<Campus />} /> 
@@ -38,9 +56,25 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} /> 
           <Route path="/test" element={<Test />} /> 
           {/* <Route path="*" element={<NotFound />} /> */}
+
+          {/* ////department pages///// */}
+          <Route path="/department/commerce" element={<Commerce />} />
+          <Route path="/department/computational-studies" element={<ComputationalStudies />} />
+          <Route path="/department/management-studies" element={<ManagementStudies />} />
+          <Route path="/department/physics" element={<Physics />} />
+          <Route path="/department/chemistry" element={<Chemistry />} />
+          <Route path="/department/mathematics" element={<Mathematics />} />
+          <Route path="/department/tamil" element={<Tamil />} />
+          <Route path="/department/english" element={<English />} />
+          <Route path="/department/french" element={<French />} />
+          <Route path="/department/bio-science" element={<BioScience />} />
+          <Route path="/department/food-science" element={<FoodScience />} />
+          <Route path="/department/media-studies" element={<MediaStudies />} />
+
         </Routes>
       </MainLayout>
     </Router>
+    </AppProvider>
     </>
   );
 }

@@ -15,9 +15,9 @@ function TopHeader() {
  </div>
  <div className='right'>
     <span onClick={()=>handleNavigate('/campus')}>Campus</span>
-    <span  onClick={()=>handleNavigate('/campus')}>Departments</span>
+    <span  onClick={()=>handleNavigate('/department/commerce')}>Departments</span>
     <span  onClick={()=>handleNavigate('/faculty')}>Faculty</span>
-    <span  onClick={()=>handleNavigate('/campus')}>SMVEC</span>
+    <span  onClick={()=>handleNavigate('')}>SMVEC</span>
     <span  onClick={()=>handleNavigate('/contact-us')}>Contact</span>
  </div>
     </div>

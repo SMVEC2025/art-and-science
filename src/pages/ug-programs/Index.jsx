@@ -19,6 +19,7 @@ function Index() {
       {/* undergraduate area start */}
       {/* <UndergraduateArea/> */}
       <UGProgramsTable data={underGraduatePrograms} category="UG"  />
+
       <UGProgramsTable  data={postGraduatePrograms} category="PG"/>
       <HomeCta/>
       

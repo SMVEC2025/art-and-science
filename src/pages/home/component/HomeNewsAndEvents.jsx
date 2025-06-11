@@ -9,8 +9,10 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { FreeMode, Pagination } from 'swiper/modules';
+import { useNavigate } from "react-router-dom";
 
-function HomeNewsAndEvents({title}) {
+function HomeNewsAndEvents({ title,eventurl }) {
+    const navigate = useNavigate();
 
     const newsAndEvents = [
         {
@@ -65,20 +67,23 @@ function HomeNewsAndEvents({title}) {
                     className="mySwiper"
                 >
                     {newsAndEvents.map((event, index) => (
-                        <SwiperSlide>           
-                             <img src={event.image} alt="" />
-                             <div className="bottom">
+                        <SwiperSlide>
+                            <img src={event.image} alt="" />
+                            <div className="bottom">
                                 <div className="left">
                                     <h2>{event.time?.split('T')[0]?.split('-')[2]}</h2>
                                     <h4>{event.time?.split('T')[0]?.split('-')[1]}/{event.time?.split('T')[0]?.split('-')[0]}</h4>
-                             </div>
-                             <div className="right">
-                                 <h2>{event.eventName}</h2>
-                                 <p>{event.location}</p>
-                             </div>
-                             </div>
+                                </div>
+                                <div className="right">
+                                    <h2>{event.eventName}</h2>
+                                    <p>{event.location}</p>
+                                </div>
+                            </div>
                         </SwiperSlide>))}
                 </Swiper>
+            </div>
+            <div className="event_footer">
+                <button onClick={()=>(navigate(eventurl))} className="btn">View All Events</button>
             </div>
         </div>
     )

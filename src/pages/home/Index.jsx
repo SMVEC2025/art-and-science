@@ -17,7 +17,7 @@ function Index() {
        <About/>
        <Counter/>
        <Program/>
-       <HomeNewsAndEvents/>
+       <HomeNewsAndEvents title="SMVEC Events" eventurl="/events" />
        <HomeCampus/>
        <HomeSocial/>
        <HomeCta/>

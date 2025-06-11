@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { IoMdCall } from "react-icons/io";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
@@ -9,12 +9,13 @@ import mainlogo from '/assets/img/logo/mainlogo.png'
 import smveclogo from '/assets/img/logo/smveclogo.png'
 import { useNavigate } from 'react-router-dom';
 import TopHeader from './TopHeader';
+import { AppContext } from '../../context/AppContext';
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollingUp, setScrollingUp] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const navigate = useNavigate()
-
+  const {setShowInstantForm} = useContext(AppContext)
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -74,7 +75,7 @@ function Navbar() {
           <div className='menu-item'>
             <span>Academics</span>
             <div className='dropdown'>
-              <span onClick={() => handleClick('/departments/department-of-basicscience')}>departments</span>
+              <span onClick={() => handleClick('/department/commerce')}>departments</span>
               <span onClick={() => handleClick('/faculty')}>Faculty</span>
               <span onClick={() => handleClick('/programs')}>Programs</span>
             </div>
@@ -94,7 +95,7 @@ function Navbar() {
           </div>
 
           <div className='menu-item'>
-            <span><button>Apply Now</button></span>
+            <span><button onClick={()=>{setShowInstantForm(true)}}>Apply Now</button></span>
           </div>
         </div>
 

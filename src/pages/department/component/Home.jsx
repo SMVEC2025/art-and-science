@@ -5,106 +5,13 @@ import {
   FaUserTie, FaChartBar, FaLaptopCode, FaDesktop, FaKeyboard, FaBrain,
   FaAtom, FaMicroscope, FaBookOpen, FaUsers, FaDna, FaLeaf,
   FaAppleAlt, FaUtensils, FaVideo, FaNewspaper
-} from 'react-icons/fa'
+} from 'react-icons/fa';
+import { DepartmentData } from "../../../data/DeprartmentData";
 function Home({title}) {
-    const { program } = useParams();
-    const decodedProgram = decodeURIComponent(program);
-    const [currentProgram, setCurrentProgram] = useState("");
     const [programBar,setProgramBar]=useState(false)
     const navigate = useNavigate();
-    const ugPrograms = [
-        {
-            department: "Department of Professional Studies",
-            icons: <FaChartLine />,
-            programs: [
-                "B.Com Professional Accounting",
-                "B.Com Cost and Management Accounting"
-            ]
-        },
-        {
-            department: "Department of Commerce",
-            icons: <FaCoins  />,
-            programs: [
-                "B.Com",
-                "B.Com Accounting and Finance"
-            ]
-        },
-        {
-            department: "Department of Corporate Secretary Ship",
-            icons: <FaFileSignature  />,
-            programs: [
-                "B.Com Corporate Secretaryship",
-                "B.Com Computer Applications"
-            ]
-        },
-        {
-            department: "Department of Management",
-            icons: <FaUserTie  />,
-            programs: [
-                "BBA",
-                "BBA Fintech and Digital Banking"
-            ]
-        },
-        {
-            department: "Department of Computer Science",
-            icons: <FaLaptopCode  />,
-            programs: [
-                "B.Sc Computer Science",
-                "B.Sc Data Science and Analytics"
-            ]
-        },
-        {
-            department: "Department of Computer Applications",
-            icons: <FaKeyboard  />,
-            programs: [
-                "BCA"
-            ]
-        },
-        {
-            department: "Department of Basic Sciences",
-            icons: <FaAtom />,
-            programs: [
-                "B.Sc. Physics",
-                "B.Sc. Chemistry",
-                "B.Sc Mathematics"
-            ]
-        },
-        {
-            department: "Department of Humanities",
-            icons: <FaBookOpen  />,
-            programs: [
-                "Tamil",
-                "English",
-                "French"
-            ]
-        },
-        {
-            department: "Department of Bio Sciences",
-            icons: <FaDna  />,
-            programs: [
-                "B.Sc Biotechnology",
-                "B.Sc Microbiology"
-            ]
-        },
-        {
-            department: "Department of Food Sciences",
-            icons: <FaAppleAlt  />,
-            programs: [
-                "B.Sc Nutrition and Dietetics"
-            ]
-        },
-        {
-            department: "Department of Media Studies",
-            icons: <FaVideo  />,
-            programs: [
-                "B.Sc. Visual Communication",
-                "B.A Journalism & Mass communication"
-            ]
-        }
-    ];
-    const handleProgramClick = (programName) => {
-        const formatted = encodeURIComponent(programName);
-        navigate(`/departments/${formatted}`);
+    const handleProgramClick = (linkurl) => {
+        navigate(`/department/${linkurl}`);
     };
 
     return (
@@ -126,14 +33,14 @@ function Home({title}) {
             </div> */}
           <div className="programbar">
              <div className={`btn ${programBar?"true":""}`} onMouseEnter={()=>setProgramBar(true)} >
-                Program
+                department
              </div>
               <div  className={`content ${programBar?"open":"close"}`} onMouseLeave={()=>setProgramBar(false)}>
-                <h1>Programs</h1>
+                <h1>department</h1>
                   <div className='items'>
                     
-                {ugPrograms.map((program, index) => (
-                    <div onClick={() => { handleProgramClick(program.department) }} className="itemlist">
+                {DepartmentData.map((program, index) => (
+                    <div onClick={() => { handleProgramClick(program.linkurl) }} className="itemlist">
                         <div className="icons">
                             {program.icons}
                         </div>
