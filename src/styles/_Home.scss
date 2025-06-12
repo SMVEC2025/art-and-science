@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 
-
+@import './mixin.scss';
 
 .hero-main {
     width: 100%;
     height: 100vh;
-    background-image: url('https://smvec.ac.in/wp-content/uploads/2024/06/Infrastructure_2.webp');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -14,6 +13,12 @@
     align-items: start;
     position: relative;
     overflow: hidden;
+
+    video {
+        width: 100vw !important;
+        height: 100vh !important;
+        object-fit: cover;
+    }
 
     .content {
         display: flex;
@@ -23,15 +28,19 @@
         gap: 10px;
         color: white;
         z-index: 3;
-        position: relative;
-        margin-top: calc(300px + 50PX);
-
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    @include respond-to("sm") {
+        width: 95vw;
+    }
         button {
             background-color: $primary-blue;
             border: none;
             color: white;
             padding: 12px 35px;
-            margin-top: 2rem;
             font-size: 15px;
             cursor: pointer;
         }
@@ -43,7 +52,14 @@
             text-transform: uppercase;
             font-weight: 600;
             line-height: 80%;
+            white-space: nowrap;
+    @include respond-to("sm") {
+            font-size: 35px;
+            white-space: wrap;
+            line-height: 40px;
 
+
+    }
         }
 
         h2 {
@@ -55,6 +71,10 @@
             padding-left: 5px;
             margin-bottom: 10px;
             color: white;
+    @include respond-to("sm") {
+          font-size: 20px;
+            font-weight: 400;
+    }
 
         }
 
@@ -68,6 +88,10 @@
             margin-bottom: 10px;
             text-align: right;
             color: white;
+ @include respond-to("sm") {
+          font-size: 20px;
+            font-weight: 400;
+    }
 
         }
 
@@ -77,6 +101,8 @@
             font-optical-sizing: auto;
             font-weight: 400;
             letter-spacing: 0.3px;
+            transform: translateY(-30px);
+            text-align: center;
         }
 
     }
@@ -84,7 +110,7 @@
     .overlay {
         width: 100%;
         height: 100%;
-        background-color: rgba(53, 53, 53, 0.301);
+        background-color: rgba(0, 0, 0, 0.322);
         position: absolute;
         top: 0;
         left: 0;
@@ -129,7 +155,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgba(61, 61, 61, 0.418);
+        background-color: rgba(255, 0, 0, 0.418);
         top: 0;
         left: 0;
         z-index: 1;
@@ -216,20 +242,37 @@
 .about-main {
     padding: 10rem 20px;
     display: flex;
-    font-display: row;
+    flex-direction: row;
     justify-content: center;
     gap: 50px;
+
+    @include respond-to("sm") {
+        flex-direction: column;
+        justify-content: start;
+
+    }
 
     .left {
         img {
             width: 500px;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+
+            @include respond-to("sm") {
+                width: 85vw;
+            }
         }
     }
 
     .right {
         max-width: 40%;
         width: fit-content !important;
+
+        @include respond-to("sm") {
+            max-width: calc(100% - 30px);
+
+        }
 
 
         h2 {
@@ -244,6 +287,11 @@
             max-width: 60%;
             margin-bottom: 20px;
             padding-left: 10px;
+
+            @include respond-to("sm") {
+                max-width: 90%;
+
+            }
         }
 
         .area {
@@ -287,6 +335,13 @@
             cursor: pointer;
             margin-left: 10px;
 
+            @include respond-to("sm") {
+                margin-top: 0rem;
+                margin-left: 25px;
+
+
+            }
+
         }
     }
 }
@@ -298,6 +353,11 @@
     margin-top: 300px;
     padding-top: 250px;
     padding-bottom: 10rem;
+
+    @include respond-to("sm") {
+        margin-top: 100px;
+        padding-top: 100px;
+    }
 
     .img-container {
         position: absolute;
@@ -316,6 +376,10 @@
             border-radius: 15px;
             outline: 5px solid $primary-orange;
 
+            @include respond-to("sm") {
+                height: 250px;
+
+            }
 
         }
     }
@@ -326,6 +390,13 @@
         justify-content: center;
         gap: 5rem;
         margin-top: 5rem;
+
+        @include respond-to("sm") {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
     }
 
     .counter-box {
@@ -342,6 +413,7 @@
 
         p {
             font-size: 18px;
+            text-align: center;
         }
     }
 
@@ -358,6 +430,16 @@
     background-attachment: fixed;
     position: relative;
     justify-content: space-around;
+
+    @include respond-to("sm") {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        align-items: start;
+        padding: 7rem 30px;
+
+
+    }
 
     .overlay {
         position: absolute;
@@ -424,17 +506,19 @@
     padding: 10rem 0;
     padding-bottom: 15rem;
 
-  .event_footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    button{
-        background-color: $primary-blue;
-        color: rgb(243, 243, 243);
-        padding: 10px 20px;
-        margin-top: 1rem;
+    .event_footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            background-color: $primary-blue;
+            color: rgb(243, 243, 243);
+            padding: 10px 20px;
+            margin-top: 1rem;
+        }
     }
-  }
+
     .swiper {
         width: 80%;
         height: 100%;
@@ -521,6 +605,12 @@
     color: white;
     position: relative;
 
+    @include respond-to("sm") {
+        padding: 3rem 0;
+        padding-bottom: 10rem;
+
+    }
+
     .content {
         display: flex;
         flex-direction: row;
@@ -530,8 +620,19 @@
         color: white;
         justify-content: space-between;
 
+        @include respond-to("sm") {
+            flex-direction: column-reverse;
+            justify-content: start;
+            max-width: 90%
+        }
+
         .left {
             max-width: 60%;
+
+            @include respond-to("sm") {
+                max-width: 90%;
+
+            }
 
 
             h1 {
@@ -546,14 +647,20 @@
             h3 {
                 font-size: 25px;
                 font-weight: 400;
-                                color: white;
+                color: white;
+
 
             }
 
             p {
                 max-width: 90%;
                 margin-top: 1rem;
-                                color: white;
+                color: white;
+
+                @include respond-to("sm") {
+                    max-width: 100%;
+
+                }
 
             }
         }
@@ -562,7 +669,7 @@
             h4 {
                 font-size: 20px;
                 font-weight: 400;
-                                color: white;
+                color: white;
 
             }
 
@@ -572,7 +679,7 @@
                 margin-top: 0.5rem;
                 position: relative;
                 cursor: pointer;
-                                color: white;
+                color: white;
 
 
 
@@ -593,8 +700,13 @@
         bottom: 0;
         transform: translateY(50%);
         z-index: 2;
-    
-     
+
+        @include respond-to("sm") {
+            width: 90vw;
+            height: 250px;
+        right: 5vw
+        }
+
     }
 }
 
@@ -617,7 +729,14 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
-         
+
+        @include respond-to("sm") {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
         div {
             height: 350px;
             background-color: #011f5b;
@@ -630,23 +749,26 @@
             align-items: start;
             flex-direction: column;
             cursor: pointer;
-        section{
-            display: flex;
-            justify-content: center;
-            align-items: start;
-            flex-direction:column;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: all 0.2s ease-in-out;
-            color: white;
-            &:hover{
-                
-            background-color: rgba(17, 39, 161, 0.76);
-            backdrop-filter: blur(1px);
-            opacity: 1;
+
+            section {
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: all 0.2s ease-in-out;
+                color: white;
+
+                &:hover {
+
+                    background-color: rgba(17, 39, 161, 0.76);
+                    backdrop-filter: blur(1px);
+                    opacity: 1;
+                }
             }
-        }
+
             span {
                 margin-left: 10px;
                 color: #ffffff;
@@ -654,7 +776,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                .logo_t{
+
+                .logo_t {
                     font-size: 20px;
                     background-color: rgba(128, 128, 128, 0.541);
                     width: 40px;
@@ -686,19 +809,17 @@
 
 //////////Home - cta ////////////////
 .netflix-box-container {
-//   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    //   min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .video-box {
-  width: 90%;
-  max-width: 800px;
-  aspect-ratio: 16 / 9;
-  border-radius: 0;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
-
-

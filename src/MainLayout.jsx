@@ -8,9 +8,9 @@ import InstantForm from './components/form/InstantForm';
 const MainLayout = ({ children }) => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <InstantForm/>
-      <TopHeader/>
+      {/* <TopHeader/> */}
       <main>{children}</main>
       <Footer />
     </>

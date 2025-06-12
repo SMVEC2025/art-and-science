@@ -4,7 +4,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
 import TabSwitcher from "./TabSwitcher";
 import { AppContext } from "../../../context/AppContext";
-import { GoChevronRight,GoChevronLeft } from "react-icons/go";
+import { GoChevronRight, GoChevronLeft } from "react-icons/go";
 
 const AllEventSection = ({ eventData }) => {
   const { selectedEvent } = useContext(AppContext);
@@ -51,9 +51,9 @@ const AllEventSection = ({ eventData }) => {
           <div className="row wow fadeInUp">
             <div className="col-xl-6 col-md-8 col-lg-6 m-auto">
               <div className="tf__heading_area mb_15">
-                {selectedEvent == 'all' &&(<h5>OUR Events</h5>)}
-                {selectedEvent == 'upcoming' &&(<h5>OUR Upcoming Events</h5>)}
-                {selectedEvent == 'past' &&(<h5>OUR past Events</h5>)}
+                {selectedEvent == 'all' && (<h5>OUR Events</h5>)}
+                {selectedEvent == 'upcoming' && (<h5>OUR Upcoming Events</h5>)}
+                {selectedEvent == 'past' && (<h5>OUR past Events</h5>)}
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@ const AllEventSection = ({ eventData }) => {
                           aria-label="Previous"
                           onClick={() => handleEventPageChange(currentEventPage - 1)}
                         >
-                          <i><GoChevronLeft/></i>
+                          <i><GoChevronLeft /></i>
                         </a>
                       </li>
                       {Array.from({ length: totalEventPages }, (_, index) => (
@@ -127,7 +127,7 @@ const AllEventSection = ({ eventData }) => {
                           aria-label="Next"
                           onClick={() => handleEventPageChange(currentEventPage + 1)}
                         >
-                          <i><GoChevronRight/></i>
+                          <i><GoChevronRight /></i>
                         </a>
                       </li>
                     </ul>
