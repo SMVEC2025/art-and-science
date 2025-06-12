@@ -39,6 +39,9 @@ import BioScience from './pages/department/pages/BioScience';
 import FoodScience from './pages/department/pages/FoodScience';
 import MediaStudies from './pages/department/pages/MediaStudies';
 
+////calender
+import Calender from './pages/calender/Index'
+
 function App() {
   return (
     <>
@@ -52,7 +55,7 @@ function App() {
           <Route path="/program/:program" element={<Program />} /> 
           <Route path="/faculty" element={<Faculty />} /> 
           <Route path="/faculty/:dept" element={<DepartmentFaculty />} /> 
-          <Route path="/about" element={<About />} /> 
+          <Route path="/about-us" element={<About />} /> 
           <Route path="/about/history" element={<AboutHistory />} /> 
           <Route path="/campus" element={<Campus />} /> 
           <Route path="/programs" element={<AllPrograms />} /> 
@@ -66,7 +69,8 @@ function App() {
           <Route path="/map" element={<Map />} /> 
           <Route path="/test" element={<Test />} /> 
           {/* <Route path="*" element={<NotFound />} /> */}
-
+          <Route path="/calender" element={<Calender />} /> 
+          
           {/* ////department pages///// */}
           <Route path="/department/commerce" element={<Commerce />} />
           <Route path="/department/computational-studies" element={<ComputationalStudies />} />

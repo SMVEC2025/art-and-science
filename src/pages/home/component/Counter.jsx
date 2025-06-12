@@ -3,10 +3,10 @@ import CountUp from 'react-countup';
 import { useInView, motion } from 'framer-motion';
 function Counter() {
       const stats = [
-    { end: 20, label: 'Programs',suffix:'+' },
-    { end: 5460, label: 'Students', suffix:'+' },
+    { end: 25, label: 'Programs',suffix:'+' },
+    { end: 1200, label: 'Students', suffix:'+' },
     { end: 95, suffix: '%', label: 'Graduation rate of our student' },
-    { end: 1670, label: 'Faculty',suffix:"+" },
+    { end: 100, label: 'Faculty',suffix:"+" },
   ];
 
   const ref = useRef(null);
@@ -14,7 +14,7 @@ function Counter() {
   return (
     <div className='home-counter'>
         <div className='img-container'>
-            <img src="https://news.berkeley.edu/wp-content/uploads/2025/05/DanielLubetskygraduation2025-1500.jpg" alt="" />
+            <img src="/assets/img/image/auditorium.JPG" alt="" />
         </div>
         <div>
                 <div className="counter-section" ref={ref}>

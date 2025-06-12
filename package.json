@@ -20,6 +20,7 @@
     "@photo-sphere-viewer/virtual-tour-plugin": "^5.13.3",
     "axios": "^1.9.0",
     "bootstrap": "^5.3.6",
+    "date-fns": "^4.1.0",
     "font-awesome": "^4.7.0",
     "framer-motion": "^12.15.0",
     "gsap": "^3.13.0",

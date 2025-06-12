@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
 import FooterSocial from "./FooterSocial";
-import logo from "/assets/img/logo/logo-red.png";
-import logo_black from "/assets/img/logo/logo-black-2.png";
+import logo from '/assets/img/logo/logo.png';
+import logo_black from '/assets/img/logo/logo.png';
 import { AiTwotoneMail } from "react-icons/ai";
+import mainlogo from '/assets/img/logo/logo.png'
 
 
 export default function Footer( ) {
@@ -11,7 +12,7 @@ export default function Footer( ) {
   const style_2 = false
     const footerLinks = {
     link_one:[
-        {id:1,title:"About Us",link:'/about'},
+        {id:1,title:"About Us",link:'/about-us'},
         {id:2,title:"Courses",link:'/course-with-filter'},
         {id:3,title:"News & Blog",link:'/blog-standard'},
         {id:4,title:"Become A Teacher",link:'/become-instructor'},
@@ -39,7 +40,7 @@ export default function Footer( ) {
                     <img 
                        src={style_2 ? logo_black : logo} 
                        alt="logo"  
-                       style={{ height: "auto" }} />
+                       style={{ height: "auto",width:"250px" }} />
                   </Link>
                 </div>
                 <div className="tp-footer-widget-content">

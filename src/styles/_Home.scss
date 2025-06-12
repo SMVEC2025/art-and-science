@@ -284,8 +284,8 @@
         }
 
         p {
-            max-width: 60%;
-            margin-bottom: 20px;
+            max-width: 80%;
+            margin-bottom: 8px;
             padding-left: 10px;
 
             @include respond-to("sm") {
@@ -305,11 +305,12 @@
                 font-size: 23px;
                 color: $primary-blue;
                 text-transform: capitalize;
+                cursor: pointer;
 
             }
 
             p {
-                margin-bottom: 1.5rem;
+                margin-bottom: 0.5rem;
                 padding-left: 0;
 
             }
@@ -422,11 +423,11 @@
 
 ////program.scss////////////////////
 .home-program {
-    background-image: url('https://www.usc.edu/wp-content/uploads/2025/05/GR5_0902-1920x1080.jpg');
+    background-image: url('/assets/img/image/programbanner.JPG');
     padding: 13rem 30px;
     display: flex;
     flex-direction: row;
-
+    background-size: cover;
     background-attachment: fixed;
     position: relative;
     justify-content: space-around;
@@ -721,7 +722,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 250px;
+    margin-top: 50px;
     margin-bottom: 5rem;
 
     .content {
@@ -822,4 +823,217 @@
     border-radius: 0;
     overflow: hidden;
     transition: transform 0.3s ease;
+}
+
+/////////////placements/////////////
+.hp_main{
+   
+    margin-top: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .conmain{
+ display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    max-width: 75%;
+        .con{
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 100%;
+        }
+    }
+
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///calender
+/// 
+.calendermain{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    .layer{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(20, 19, 18, 0.26);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(3px);
+    }
+}
+.calendar-container {
+  width: 90vw;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.calendar-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #2a2a2a;
+}
+
+.calendar-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.calendar-controls button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #eee;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.calendar-controls button.active,
+.calendar-controls button:hover {
+  background: #333;
+  color: #fff;
+}
+
+.month-dropdown {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+.three-months-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.three-months-view.single {
+  justify-content: center;
+}
+
+.month-container {
+  flex: 1 1 30%;
+  min-width: 280px;
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.month-title {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.weekday {
+  font-weight: bold;
+  text-align: center;
+  color: #777;
+}
+
+.day {
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid transparent;
+}
+
+.day:hover {
+  background: #eaeaea;
+}
+
+.day.disabled {
+  color: #ccc;
+  cursor: default;
+}
+
+.event-day {
+  background: #4868cfb4;
+  border: 1px solid #1543a5;
+  font-weight: bold;
+  color: #333;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.popup {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.popup h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.popup button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }

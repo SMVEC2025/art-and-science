@@ -13,6 +13,7 @@ import Program from "./component/Program"
 import './Home.scss'
 import { useContext, useEffect } from "react"
 import { AppContext } from "../../context/AppContext"
+import Placements from "./component/Placements"
 function Index() {
   const {setCurrentPage}=useContext(AppContext)
   useEffect(() => {
@@ -55,8 +56,10 @@ function Index() {
           ))}
 
         </div>
-      </div>       <HomeNewsAndEvents title="SMVEC Events" eventurl="/events" />
+      </div>       
+      <HomeNewsAndEvents title="SMVEC Events" eventurl="/events" />
       <HomeCampus />
+      <Placements/>
       <HomeSocial />
       <HomeCta />
 

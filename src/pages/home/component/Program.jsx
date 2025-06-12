@@ -9,7 +9,7 @@ function Program({programDetail}) {
   console.log(programDetail)
   console.log(programDetail)
   return (
-    <div className='home-program'>
+    <div className='home-program' >
         <div className='overlay'></div>
       <div className='left'>
         <h2>Explore our Academic<br></br> Programs</h2>

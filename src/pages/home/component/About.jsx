@@ -1,22 +1,36 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function About() {
+  const navigate = useNavigate()
   return (
     <div className='about-main'>
       <div className='left'>
-        <img src="https://smvec.ac.in/wp-content/uploads/2024/06/Sri_Manakula_Vinayagar_Engineering_College.webp" alt="" />
+        <img src="/assets/img/image/entrance.JPG" alt="" />
       </div>
       <div className='right'>
-         <h2>The largest & Most Diverse <br></br>Universities in the United Emirates</h2>
-         <p>Far far away, behind the word mountains, far from the Consonantia, there live the blind texts. Separated they marks grove right at the coast of the Semantics a large language ocean</p>
-         <div className='area'> 
-            <h3>Graduate Program</h3>
-            <p>coast of the Semantics a large language ocean</p>
-        
-            <h3>Under-Graduate Program</h3>
-            <p>coast of the Semantics a large language ocean</p>
-         </div>
-         <button>More About</button>
+        <h2>Welcome to <br></br> SMVEC School of Arts and Science</h2>
+        <p>
+          At SMVEC School of Arts and Science, we foster academic excellence and holistic development in the heart of the esteemed SMVEC campus in Madagadipet, Pondicherry. Our diverse academic community encompasses 12 vibrant departments offering 27 engaging undergraduate and postgraduate programs in Arts, Science, Commerce, Media Studies, and more.
+
+
+        </p>
+        <p>
+          Founded in 2020 and affiliated with Pondicherry University, our college is equipped with modern classrooms, specialized laboratories, a central library, and vibrant student clubs to support both intellectual and personal growth .
+
+        </p>
+        <div className='area'>
+          <h3 onClick={() => { navigate('/ug-programs') }}>Under-Graduate Program</h3>
+          <p>
+            Your UG journey begins with core learning and skill growth.
+          </p>
+          <h3 onClick={() => { navigate('/pg-programs') }}>Post-Graduate Program</h3>
+          <p>PG path builds expertise and research focus.</p>
+
+
+
+        </div>
+        <button onClick={() => { navigate('/about-us') }}>More About</button>
       </div>
     </div>
   )

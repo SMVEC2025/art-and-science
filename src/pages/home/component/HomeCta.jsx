@@ -1,4 +1,4 @@
-import cta_logo from '/assets/img/cta/cta-logo-1.png';
+import cta_logo from '/assets/img/logo/singlelogo.png';
 import cta_shape from '/assets/img/cta/cta-shape-1.png';
 import { Link } from 'react-router-dom';
 import { BsArrowRight } from "react-icons/bs";
@@ -19,7 +19,7 @@ export default function HomeCta() {
             <div className="tp-cta-wrapper d-flex align-items-center">
               <div className="tp-cta-logo">
                 <Link href="/">
-                  <img src={cta_logo} alt="cta-logo" />
+                  <img style={{width:"auto",height:"150px"}} src={cta_logo} alt="cta-logo" />
                 </Link>
               </div>
               <div className="tp-cta-content">

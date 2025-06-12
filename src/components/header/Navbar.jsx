@@ -5,7 +5,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import { RiYoutubeLine } from "react-icons/ri";
 import { FaXTwitter } from "react-icons/fa6";
 import { SlSocialFacebook } from "react-icons/sl";
-import mainlogo from '/assets/img/logo/mainlogo.png'
+import mainlogo from '/assets/img/logo/logo.png'
+import whitelogo from '/assets/img/logo/whitelogo.png'
 import smveclogo from '/assets/img/logo/smveclogo.png'
 import { useNavigate } from 'react-router-dom';
 import TopHeader from './TopHeader';
@@ -54,7 +55,7 @@ function Navbar() {
 
     <div className={`navbar-main ${isScrolled ? "scrolled" : ''} ${scrollingUp ? "up" : "down"}`}>
       <div className='left'>
-        <span><img src={mainlogo} alt="" /></span>
+        <span><img style={{width:"250px",height:"auto"}} src={isScrolled?mainlogo:whitelogo} alt="" /></span>
 
       </div>
       <div className='right'>
@@ -66,7 +67,7 @@ function Navbar() {
           <div className='menu-item'>
             <span>About</span>
             <div className='dropdown'>
-              <span onClick={() => handleClick('/about')}>About</span>
+              <span onClick={() => handleClick('/about-us')}>About</span>
               <span onClick={() => handleClick('/about/history')}>History of SMVEC</span>
               <span onClick={() => handleClick('/contact-us')}>Contact us</span>
             </div>
@@ -80,6 +81,7 @@ function Navbar() {
               <span onClick={() => handleClick('/programs')}>Programs</span>
               <span onClick={() => handleClick('/ug-programs')}>ug Programs</span>
               <span onClick={() => handleClick('/pg-programs')}>pg Programs</span>
+              <span onClick={() => handleClick('/calender')}>calender</span>
             </div>
           </div>
 
