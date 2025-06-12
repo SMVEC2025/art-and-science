@@ -22,6 +22,7 @@ import ContactUs from './pages/contactus/Index';
 import Admission from './pages/admission/Index';
 import Test from './pages/home/component/Test';
 import DepartmentFaculty from './pages/faculty/DepartmentFaculty';
+import Map from './pages/map/Index';
 import MainLayout from './MainLayout';
 import { AppProvider } from './context/AppContext';
 //department pages
@@ -62,6 +63,7 @@ function App() {
           <Route path="/department/basic-science" element={<BasicScience />} /> 
           <Route path="/admission" element={<Admission />}/>
           <Route path="/contact-us" element={<ContactUs />}/> 
+          <Route path="/map" element={<Map />} /> 
           <Route path="/test" element={<Test />} /> 
           {/* <Route path="*" element={<NotFound />} /> */}
 
