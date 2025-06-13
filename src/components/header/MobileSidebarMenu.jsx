@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdMenu } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-
+import mainlogo from '/assets/img/logo/logo.png'
+import whitelogo from '/assets/img/logo/whitelogo.png'
 const MobileSidebarMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollingUp, setScrollingUp] = useState(false);
 
   const toggleSubMenu = (index) => {
     setOpenSubMenu(openSubMenu === index ? null : index);
@@ -14,19 +18,43 @@ const MobileSidebarMenu = () => {
     setMenuOpen(false)
     navigate(value)
   }
-
+ useEffect(() => {
+     const handleScroll = () => {
+       const currentScrollY = window.scrollY;
+ 
+       // Handle first scroll > 70px
+       if (currentScrollY > 70) {
+         setIsScrolled(true);
+ 
+         // Detect scroll direction
+         if (currentScrollY < lastScrollY) {
+           setScrollingUp(true);
+         } else {
+           setScrollingUp(false);
+         }
+       } else {
+         setIsScrolled(false);
+         setScrollingUp(false); // Reset scrolling direction when less than 70px
+       }
+ 
+       setLastScrollY(currentScrollY);
+     };
+ 
+     window.addEventListener('scroll', handleScroll);
+ 
+     return () => window.removeEventListener('scroll', handleScroll);
+   }, [lastScrollY]);
   return (
     <>
       {/* Menu toggle button - only on mobile */}
-      <div className="mobile-bar">
-        <img src="/assets/img/logo/whitelogo.png" alt="" />
-         <button className="menu-toggle" onClick={() => setMenuOpen(true)}>
+      <div className={`mobile-bar ${isScrolled?'hide':'show'} ${scrollingUp?'scroll':'down'}`}>
+<img style={{width:"150px",height:"auto"}} src={isScrolled?mainlogo:whitelogo} alt="" />         <button className="menu-toggle" onClick={() => setMenuOpen(true)}>
       <MdMenu/>
       </button>
       </div>
 
       {/* Overlay and Sidebar */}
-      <div className={`sidebar-overlay ${menuOpen ? "show" : ""}`} onClick={() => setMenuOpen(false)}></div>
+      <div className={`sidebar-overlay ${menuOpen ? "show" : "hide"}`} onClick={() => setMenuOpen(false)}></div>
       <div className={`sidebar ${menuOpen ? "open" : ""}`}>
         <button className="close-btn" onClick={() => setMenuOpen(false)}>
           ✕
