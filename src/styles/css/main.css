@@ -12584,7 +12584,15 @@ a.social-insta {
 @media only screen and (max-width: 767px) {
   .tp-about-4-wrapper {
     margin-bottom: 40px;
+   
   }
+  .tp-about-4-headerone{}
+}
+@media (max-width:600px) {
+  .tp-about-4-headerone{
+    font-size: 25px;
+  }
+  
 }
 .tp-about-4-btn .tp-btn-3 {
   padding: 12px 44px;

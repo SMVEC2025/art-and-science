@@ -297,6 +297,12 @@ flex-wrap: wrap;
   border: 1px solid rgba(195, 200, 247, 0.61);
   border-radius: 10px;
   overflow: hidden;
+    @include respond-to("sm") {
+    width: 100%;
+     .fees_header,#fees_item{
+        display: none;
+     }
+    }
 }
 
 .ug-programs-table {

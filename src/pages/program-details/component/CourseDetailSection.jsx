@@ -18,14 +18,14 @@ function CourseDetailSection({ courseData }) {
                                     <tr className='header'>
                                         <th>Duration</th>
                                         <th>Fee / Year</th>
-                                        <th>Intake</th>
+                                        <th className='fees_header'>Intake</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr >
                                         <td className='items'>{element?.courseDuration}</td>
                                         <td className='items'>{element?.feePerYear}</td>
-                                        <td className='items'>{element?.intake}</td>
+                                        <td id='fees_item' className='items'>{element?.intake}</td>
                                         {console.log(courseData?.fees)}
                                     </tr>
                                 </tbody>
@@ -35,7 +35,7 @@ function CourseDetailSection({ courseData }) {
                 </>
             ))}
 
-            <h2>eligibility</h2>
+            <h2 className='eligiblity-head'>eligibility</h2>
             <p>{courseData?.eligibility}</p>
             <h2>Career opportunities</h2>
             <div className='career-opportunity'>
