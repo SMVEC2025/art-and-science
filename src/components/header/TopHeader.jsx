@@ -19,9 +19,9 @@ function TopHeader() {
             <span onClick={() => handleNavigate('/activities')}>Activities</span>
             <span onClick={() => handleNavigate('/department/commerce')}>Departments</span>
             <span onClick={() => handleNavigate(`/faculty${currentPage == 'home' ? '' : `/${currentPage}`}`)}>Faculty</span>
-            <span onClick={() => handleNavigate('')}>SMVEC</span>
+            <span  ><a href='smcev.ac.in' target='_Blank'>SMVEC</a></span>
             <span onClick={() => handleNavigate('/calendar')}>Calendar</span>
-            <span onClick={() => handleNavigate('/test')}>Virtual Campus</span>
+            {/* <span onClick={() => handleNavigate('/test')}>Virtual Campus</span> */}
          </div>
       </div>
    )

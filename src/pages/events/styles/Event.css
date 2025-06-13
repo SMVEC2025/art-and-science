@@ -10274,6 +10274,11 @@ section.tf__counter_3 {
   border-radius: 99px;
   cursor: pointer;
   transition: color 0.15s ease-in;
+  @media (max-width:380px) {
+  width: 130px;
+  text-align: center;
+    
+  }
 }
 
 .notification {
@@ -10324,6 +10329,10 @@ section.tf__counter_3 {
   z-index: 1;
   border-radius: 99px;
   transition: 0.25s ease-out;
+    @media (max-width:380px) {
+  width: 130px;
+    
+  }
 }
 
 @media (max-width: 700px) {
