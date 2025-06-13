@@ -33,9 +33,11 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-    @include respond-to("sm") {
-        width: 95vw;
-    }
+
+        @include respond-to("sm") {
+            width: 95vw;
+        }
+
         button {
             background-color: $primary-blue;
             border: none;
@@ -53,13 +55,14 @@
             font-weight: 600;
             line-height: 80%;
             white-space: nowrap;
-    @include respond-to("sm") {
-            font-size: 35px;
-            white-space: wrap;
-            line-height: 40px;
+
+            @include respond-to("sm") {
+                font-size: 35px;
+                white-space: wrap;
+                line-height: 40px;
 
 
-    }
+            }
         }
 
         h2 {
@@ -71,10 +74,11 @@
             padding-left: 5px;
             margin-bottom: 10px;
             color: white;
-    @include respond-to("sm") {
-          font-size: 20px;
-            font-weight: 400;
-    }
+
+            @include respond-to("sm") {
+                font-size: 20px;
+                font-weight: 400;
+            }
 
         }
 
@@ -88,10 +92,11 @@
             margin-bottom: 10px;
             text-align: right;
             color: white;
- @include respond-to("sm") {
-          font-size: 20px;
-            font-weight: 400;
-    }
+
+            @include respond-to("sm") {
+                font-size: 20px;
+                font-weight: 400;
+            }
 
         }
 
@@ -249,6 +254,8 @@
     @include respond-to("sm") {
         flex-direction: column;
         justify-content: start;
+        padding: 2rem 10px;
+
 
     }
 
@@ -270,7 +277,8 @@
         width: fit-content !important;
 
         @include respond-to("sm") {
-            max-width: calc(100% - 30px);
+            max-width: calc(100%);
+
 
         }
 
@@ -281,15 +289,28 @@
             line-height: 50px;
             margin-bottom: 15px;
             font-weight: 600;
+
+            @include respond-to("sm") {
+                font-size: 25px;
+                line-height: 32px;
+                margin-bottom: 10px;
+                font-weight: 600;
+            }
         }
 
         p {
             max-width: 80%;
             margin-bottom: 8px;
-            padding-left: 10px;
 
             @include respond-to("sm") {
-                max-width: 90%;
+                max-width: 100%;
+                padding-left: 2px;
+                font-size: 16px;
+                text-transform: lowercase;
+                line-height: 22px;
+                margin-bottom: 4px;
+
+
 
             }
         }
@@ -299,19 +320,35 @@
             position: relative;
             padding-left: 20px;
             margin-left: 10px;
-
+            @include respond-to("sm") {
+           margin-top: 0.3rem;
+            position: relative;
+            padding-left: 10px;
+            margin-left: 0;
+            }
             h3 {
                 font-weight: 600;
                 font-size: 23px;
                 color: $primary-blue;
                 text-transform: capitalize;
                 cursor: pointer;
+            @include respond-to("sm") {
+                font-size: 20px;
+                margin-bottom: 0;
+
+            }
 
             }
 
             p {
                 margin-bottom: 0.5rem;
                 padding-left: 0;
+                  @include respond-to("sm") {
+                font-size: 16px;
+                text-transform: lowercase;
+                margin-bottom: 0.1rem;
+
+            }
 
             }
         }
@@ -319,7 +356,7 @@
         .area::before {
             content: "";
             height: 100%;
-            width: 5px;
+            width: 3px;
             top: 0;
             left: 0;
             background-color: $primary-blue;
@@ -337,8 +374,10 @@
             margin-left: 10px;
 
             @include respond-to("sm") {
-                margin-top: 0rem;
-                margin-left: 25px;
+                margin-top: 1rem;
+                margin-left: 10px;
+            padding: 8px 25px;
+
 
 
             }
@@ -356,8 +395,11 @@
     padding-bottom: 10rem;
 
     @include respond-to("sm") {
-        margin-top: 100px;
+        margin-top: 150px;
         padding-top: 100px;
+    padding-bottom: 5rem;
+
+        
     }
 
     .img-container {
@@ -405,16 +447,27 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-
+        @include respond-to("sm") {
+        justify-content: start;
+        }
         h2 {
             font-size: 3rem;
             font-weight: 600;
             color: $primary-blue;
+        @include respond-to("sm") {
+            font-size: 2rem;
+
+        }
         }
 
         p {
             font-size: 18px;
             text-align: center;
+        @include respond-to("sm") {
+            font-size: 16px;
+            margin: 0;
+
+        }
         }
     }
 
@@ -462,11 +515,26 @@
             line-height: 70px;
             margin-bottom: 20px;
             font-family: "Playfair Display", serif;
+
+            @include respond-to("sm") {
+                font-size: 28px;
+                line-height: 100%;
+
+
+            }
         }
 
         p {
             color: rgb(255, 255, 255);
             font-size: 18px;
+
+            @include respond-to("sm") {
+                font-size: 16px;
+                font-weight: lighter;
+
+
+
+            }
         }
     }
 
@@ -506,6 +574,11 @@
 .hnae_main {
     padding: 10rem 0;
     padding-bottom: 15rem;
+
+    @include respond-to("sm") {
+        padding: 1rem 0;
+        padding-bottom: 2rem;
+    }
 
     .event_footer {
         display: flex;
@@ -631,7 +704,7 @@
             max-width: 60%;
 
             @include respond-to("sm") {
-                max-width: 90%;
+                max-width: 100%;
 
             }
 
@@ -642,6 +715,10 @@
                 font-family: "Playfair Display", serif;
                 color: white;
                 margin-bottom: 20px;
+    @include respond-to("sm") {
+                font-size: 28px;
+
+    }
 
             }
 
@@ -649,6 +726,11 @@
                 font-size: 25px;
                 font-weight: 400;
                 color: white;
+                  @include respond-to("sm") {
+                font-size: 20px;
+
+    }
+
 
 
             }
@@ -705,7 +787,7 @@
         @include respond-to("sm") {
             width: 90vw;
             height: 250px;
-        right: 5vw
+            right: 5vw
         }
 
     }
@@ -724,7 +806,10 @@
     flex-direction: column;
     margin-top: 50px;
     margin-bottom: 5rem;
+        @include respond-to("sm") {
+    margin-top: 10px;
 
+        }
     .content {
 
         display: grid;
@@ -750,6 +835,11 @@
             align-items: start;
             flex-direction: column;
             cursor: pointer;
+
+            @include respond-to("sm") {
+                height: 250px;
+                width: 90vw;
+            }
 
             section {
                 display: flex;
@@ -826,32 +916,49 @@
 }
 
 /////////////placements/////////////
-.hp_main{
-   
+.hp_main {
+
     margin-top: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    .conmain{
- display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-    max-width: 75%;
-        .con{
-        width: 150px;
+        @include respond-to("sm") {
+    margin-top: 100px;
+
+        }
+    .conmain {
         display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
         justify-content: center;
         align-items: center;
-        img{
-            width: 100%;
+        max-width: 75%;
+           @include respond-to("sm") {
+        max-width: 95%;
+        gap: 20px;
+
+
         }
-    }
+
+        .con {
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+   @include respond-to("sm") {
+                   width: 70px;
+
+
+
+        }
+            img {
+                width: 100%;
+            }
+        }
 
     }
-    
+
 }
 
 
@@ -869,14 +976,15 @@
 
 ///calender
 /// 
-.calendermain{
+.calendermain {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-size: cover;
-    .layer{
+
+    .layer {
         width: 100%;
         height: 100%;
         background-color: rgba(20, 19, 18, 0.26);
@@ -886,154 +994,155 @@
         backdrop-filter: blur(3px);
     }
 }
+
 .calendar-container {
-  width: 90vw;
-  max-width: 1200px;
-  margin: 20px auto;
-  background: #fff;
-  border-radius: 20px;
-  padding: 25px;
-  font-family: 'Segoe UI', sans-serif;
+    width: 90vw;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .calendar-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 25px;
-  color: #2a2a2a;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #2a2a2a;
 }
 
 .calendar-controls {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
 }
 
 .calendar-controls button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background: #eee;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #eee;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
 }
 
 .calendar-controls button.active,
 .calendar-controls button:hover {
-  background: #333;
-  color: #fff;
+    background: #333;
+    color: #fff;
 }
 
 .month-dropdown {
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  background: #fff;
-  cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: #fff;
+    cursor: pointer;
 }
 
 .three-months-view {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .three-months-view.single {
-  justify-content: center;
+    justify-content: center;
 }
 
 .month-container {
-  flex: 1 1 30%;
-  min-width: 280px;
-  background: #f9f9f9;
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex: 1 1 30%;
+    min-width: 280px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .month-title {
-  text-align: center;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #444;
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #444;
 }
 
 .calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
 }
 
 .weekday {
-  font-weight: bold;
-  text-align: center;
-  color: #777;
+    font-weight: bold;
+    text-align: center;
+    color: #777;
 }
 
 .day {
-  text-align: center;
-  padding: 10px 0;
-  border-radius: 8px;
-  transition: 0.3s;
-  cursor: pointer;
-  background: #fff;
-  border: 1px solid transparent;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid transparent;
 }
 
 .day:hover {
-  background: #eaeaea;
+    background: #eaeaea;
 }
 
 .day.disabled {
-  color: #ccc;
-  cursor: default;
+    color: #ccc;
+    cursor: default;
 }
 
 .event-day {
-  background: #4868cfb4;
-  border: 1px solid #1543a5;
-  font-weight: bold;
-  color: #333;
+    background: #4868cfb4;
+    border: 1px solid #1543a5;
+    font-weight: bold;
+    color: #333;
 }
 
 .popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
 }
 
 .popup {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  width: 320px;
-  text-align: center;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .popup h3 {
-  margin-top: 0;
-  color: #333;
+    margin-top: 0;
+    color: #333;
 }
 
 .popup button {
-  margin-top: 15px;
-  padding: 8px 16px;
-  border: none;
-  background: #333;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
 }

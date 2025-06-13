@@ -17,7 +17,7 @@ const tourData = [
     links: [
       {
         nodeId: 'library',
-        position: { yaw: '50deg', pitch: '0deg' },
+        position: { yaw: '-200', pitch: '0deg' },
         tooltip: 'Go to Library',
         // --- Custom Arrow Icon for this link ---
         arrowStyle: {

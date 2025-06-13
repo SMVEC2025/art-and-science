@@ -9,13 +9,13 @@ const MissionVision = () => {
           <div className="mv-card vision">
             <h3 className="mv-title">Vision</h3>
             <p className="mv-text">
-              To create professionally competent individuals who can lead and innovate in diverse professional sectors while upholding ethical values and a commitment to lifelong learning.
-            </p>
+SMVEC School of Arts and Science envisions becoming a center of excellence in higher education by nurturing intellectual growth, creativity, and ethical responsibility. We aim to empower students with knowledge, values, and skills to meet global challenges and contribute meaningfully to society.            </p>
           </div>
           <div className="mv-card mission">
             <h3 className="mv-title">Mission</h3>
             <p className="mv-text">
-              To deliver quality professional education with a global outlook. To foster a learning environment that promotes critical thinking, innovation, and social responsibility. To build industry partnerships that provide students with exposure and employment opportunities.
+Our mission is to provide a transformative learning environment that fosters academic excellence, research, and holistic development. We are committed to delivering industry-relevant education, encouraging innovation, and producing responsible graduates who excel professionally and socially.
+
             </p>
           </div>
         </div>

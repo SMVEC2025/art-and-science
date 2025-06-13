@@ -1,21 +1,30 @@
 // home-header.scss
-.home-header{
+@import './mixin.scss';
+
+.home-header {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
-    .title{
+
+   
+    .title {
         font-size: 50px;
         font-weight: 400;
         letter-spacing: 0.4px;
         position: relative;
-        color:rgb(32, 32, 32);
-       font-family: "Playfair Display", serif;
+        color: rgb(32, 32, 32);
+        font-family: "Playfair Display", serif;
         text-transform: capitalize;
         color: #011f5b;
-        
+        @include respond-to("sm") {
+        font-size: 25px;
+
+        }
+
     }
-    .title::after{
+
+    .title::after {
         position: absolute;
         content: "";
         width: 70px;
@@ -25,5 +34,5 @@
         left: 50%;
         transform: translateX(-50%);
     }
-    
+
 }

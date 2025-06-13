@@ -5,22 +5,22 @@ const tutorData = [
   {
     id: 1,
     icon: <FaUniversity />,
-    title: "Professional Educators",
-    description: "Get one-on-one help from our subject matter experts.",
+    title: "Dedicated Faculty",
+    description: "Experienced and student-centric educators committed to personalized academic mentoring.",
     delay: ".3s",
   },
   {
     id: 2,
     icon: <FaUniversity />,
-    title: "Real-Time Support",
-    description: "Ask questions over live chat or schedule a virtual meeting.",
+    title: "State-of-the-Art Facilities",
+    description: "Modern laboratories, digital libraries, and smart classrooms that enrich learning.",
     delay: ".5s",
   },
   {
     id: 3,
     icon: <FaUniversity />,
-    title: "Free Access",
-    description: "Every course offers online tutoring at no additional charge.",
+    title: "Career Development Support",
+    description: "Internships, training, and placement assistance to bridge academics with industry.",
     delay: ".7s",
   },
 ];
@@ -37,8 +37,7 @@ export default function SectionTwo() {
                 <span><WorldSvg /></span>
                 <p>Know about classes</p>
               </div> */}
-              <h3 className="tp-about-tutor-title">We create unique <br />
-                digital media experiences.</h3>
+              <h3 className="tp-about-tutor-title">Why Choose Us? </h3>
             </div>
           </div>
          

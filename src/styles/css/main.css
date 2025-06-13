@@ -16220,12 +16220,14 @@ a.social-insta {
 .tp-tutor-content {
   padding: 5px 54px 52px 54px;
   margin-top: -8px;
+   height: 150px;
 }
 .tp-tutor-content p {
   color: white;
   font-weight: 300;
   line-height: 22px;
   margin-bottom: 0;
+ 
 }
 .tp-tutor-title {
   color: white;

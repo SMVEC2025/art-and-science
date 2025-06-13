@@ -17,6 +17,9 @@
     background-color:#9ea8bb00;
     transition: all 0.5s ease-in-out;
     color: white;
+ @include respond-to("sm") {
+        display: none;
+    }
 
     &.scrolled{
         background-color: white;
@@ -160,6 +163,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+     @include respond-to("sm") {
+        display: none;
+    }
+
     .left{
         display: flex;
         flex-direction: row;

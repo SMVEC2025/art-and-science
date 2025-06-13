@@ -64,6 +64,7 @@ const Test = () => {
     return function (hotSpotDiv, args) {
       hotSpotDiv.innerHTML = `
         <div class="icon-container">
+        
           <div class="custom-hotspot" title="${args?.text || ''}">
             <img src="${icon}" alt="icon" style="width: 32px; height: 32px;" />
           </div>

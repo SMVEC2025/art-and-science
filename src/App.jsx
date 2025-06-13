@@ -41,6 +41,8 @@ import MediaStudies from './pages/department/pages/MediaStudies';
 
 ////calender
 import Calender from './pages/calender/Index'
+//noticeboard
+import NoticeBoard from './pages/noticeboard/NoticeBoard'
 
 function App() {
   return (
@@ -70,6 +72,8 @@ function App() {
           <Route path="/test" element={<Test />} /> 
           {/* <Route path="*" element={<NotFound />} /> */}
           <Route path="/calender" element={<Calender />} /> 
+          <Route path="/calendar" element={<Calender />} /> 
+          <Route path="/activities" element={<NoticeBoard />} /> 
           
           {/* ////department pages///// */}
           <Route path="/department/commerce" element={<Commerce />} />
