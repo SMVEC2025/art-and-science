@@ -4,6 +4,7 @@
     position: relative;
     background-size: cover;
     overflow: hidden;
+    background-position: bottom;
 
     .programbar {
         position: absolute;
@@ -15,8 +16,8 @@
         flex-direction: row;
         transform: translate(0, -50%);
         transition: all 0.3s ease-in-out;
-     
-        
+
+
         .items {
             position: relative;
 
@@ -33,10 +34,11 @@
         .content.open {
             width: 400px;
             transition: all 0.3s ease-in-out;
-   @include respond-to("sm") {
-            width: 80vw;
 
-         }
+            @include respond-to("sm") {
+                width: 80vw;
+
+            }
         }
 
         .content.close {
@@ -65,7 +67,7 @@
                 font-weight: 500;
                 text-transform: uppercase;
                 color: rgb(58, 58, 58);
-    
+
             }
 
             .itemlist {
@@ -110,16 +112,19 @@
             padding: 7px 20px;
             border-radius: 0;
             cursor: pointer;
-         @include respond-to("sm") {
-            transform: translate(52px, 30vh) rotate(90deg) scale(-1);
-            transition: all 0.3s ease;
-                   }
+
+            @include respond-to("sm") {
+                transform: translate(52px, 30vh) rotate(90deg) scale(-1);
+                transition: all 0.3s ease;
+            }
+
             &.true {
                 background-color: #fabc58;
-                   @include respond-to("sm") {
-            transform: translate(52px, 0) rotate(90deg) scale(-1);
-        
-                   }
+
+                @include respond-to("sm") {
+                    transform: translate(52px, 0) rotate(90deg) scale(-1);
+
+                }
             }
 
         }
@@ -132,22 +137,23 @@
         position: static;
         width: 100%;
         height: 100%;
-        background-color: #14141471;
+        background-color: #04071396;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
 
         h2 {
-            color: white;
+            color: rgb(255, 255, 255);
             font-size: 60px;
             font-weight: 500;
             text-align: center;
             font-family: "Playfair Display", serif;
- @include respond-to("sm") {
-            font-size: 30px;
-        
-     }
+
+            @include respond-to("sm") {
+                font-size: 30px;
+
+            }
         }
 
         p {
@@ -158,10 +164,11 @@
             letter-spacing: 0.4px;
             font-size: 20px;
             max-width: 800px;
-             @include respond-to("sm") {
- font-size: 16px;
-            max-width: 90vw;        
-     }
+
+            @include respond-to("sm") {
+                font-size: 16px;
+                max-width: 90vw;
+            }
 
         }
 
@@ -318,11 +325,12 @@
     margin-bottom: 40px;
     color: $primary-blue;
     position: relative;
-     @include respond-to("sm") {
- font-size: $mob-heading;
-    margin-bottom: 5px;
+
+    @include respond-to("sm") {
+        font-size: $mob-heading;
+        margin-bottom: 5px;
     }
-    
+
 }
 
 .mv-heading::after {
@@ -340,10 +348,11 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-     @include respond-to("sm") {
-    gap: 0px;
 
-     }
+    @include respond-to("sm") {
+        gap: 0px;
+
+    }
 }
 
 .mv-card {
@@ -352,10 +361,11 @@
     max-width: 500px;
     transition: transform 0.3s ease;
     text-align: left;
-     @include respond-to("sm") {
-    padding: 10px;
 
-     }
+    @include respond-to("sm") {
+        padding: 10px;
+
+    }
 }
 
 
@@ -366,10 +376,11 @@
     margin-bottom: 15px;
     border-left: 6px solid $primary-blue;
     padding-left: 15px;
-     @include respond-to("sm") {
- font-size: $mob-heading;
-    margin-bottom: 5px;
-    padding-left: 5px;
+
+    @include respond-to("sm") {
+        font-size: $mob-heading;
+        margin-bottom: 5px;
+        padding-left: 5px;
         border-left: 4px solid $primary-blue;
 
     }
@@ -379,10 +390,11 @@
     font-size: 1rem;
     color: #303030;
     line-height: 1.7;
-     @include respond-to("sm") {
-  font-size:$mob-para;
-    line-height: $mob-paraline;
-     }
+
+    @include respond-to("sm") {
+        font-size: $mob-para;
+        line-height: $mob-paraline;
+    }
 }
 
 

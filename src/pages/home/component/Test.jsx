@@ -7,8 +7,8 @@ import TopHeader from '../../../components/header/TopHeader';
 
 const Test = () => {
   const datas = [
-    '/assets/img/360/gate2.jpg',
-    '/assets/img/360/gate22.jpg'
+    '/assets/img/360/gate1.jpg',
+    '/assets/img/360/entrance.jpg'
   ];
 
   const [imagesLoaded, setImagesLoaded] = useState(false); // New state to track loading

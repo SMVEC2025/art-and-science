@@ -15,7 +15,7 @@ function Home({title}) {
     };
   
     return (
-        <header className='ug-header-main' style={{backgroundImage:"url('https://smvec.ac.in/wp-content/uploads/2024/06/Infrastructure_2.webp')"}}>
+        <header className='ug-header-main' style={{backgroundImage:"url('/assets/img/image/entrance.JPG')"}}>
             <div className="content">
                 <h2>{title}</h2>
                 <p>This department fosters professional growth through industry-relevant training and real-world skill development. </p>
