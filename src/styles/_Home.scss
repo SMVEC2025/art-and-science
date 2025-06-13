@@ -305,9 +305,9 @@
             @include respond-to("sm") {
                 max-width: 100%;
                 padding-left: 2px;
-                font-size: 16px;
+                font-size: $mob-para;
                 text-transform: lowercase;
-                line-height: 22px;
+                line-height: $mob-paraline;
                 margin-bottom: 4px;
 
 
@@ -344,7 +344,7 @@
                 margin-bottom: 0.5rem;
                 padding-left: 0;
                   @include respond-to("sm") {
-                font-size: 16px;
+                font-size: $mob-para;
                 text-transform: lowercase;
                 margin-bottom: 0.1rem;
 
@@ -464,7 +464,7 @@
             font-size: 18px;
             text-align: center;
         @include respond-to("sm") {
-            font-size: 16px;
+                font-size: $mob-para;
             margin: 0;
 
         }
@@ -529,7 +529,7 @@
             font-size: 18px;
 
             @include respond-to("sm") {
-                font-size: 16px;
+                font-size: $mob-para;
                 font-weight: lighter;
 
 
@@ -562,7 +562,14 @@
         font-size: 18px;
         cursor: pointer;
         transition: all 0.2s ease-out;
+    @include respond-to("sm") {
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        height: 55px;
 
+
+    }
         &:hover {
             background-color: white;
             color: $primary-blue;

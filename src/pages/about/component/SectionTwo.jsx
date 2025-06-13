@@ -28,7 +28,7 @@ const tutorData = [
 
 export default function SectionTwo() {
   return (
-    <section className="tp-about-tutor-area pt-110 pb-90">
+    <section className="tp-about-tutor-area ">
       <div className="container">
         <div className="row align-items-end">
           <div className="col-lg-6">

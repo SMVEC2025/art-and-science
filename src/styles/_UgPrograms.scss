@@ -13,31 +13,38 @@
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        transform: translate(0,-50%);
-    transition: all 0.3s ease-in-out;
- 
-    .items{
+        transform: translate(0, -50%);
+        transition: all 0.3s ease-in-out;
+     
+        
+        .items {
             position: relative;
 
-            .header{
-            background-color: #fabc58;
-            text-align: center;
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-         }  
-    }
-    .content.open{
-        width: 400px;
+            .header {
+                background-color: #fabc58;
+                text-align: center;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+            }
+        }
+
+        .content.open {
+            width: 400px;
+            transition: all 0.3s ease-in-out;
+   @include respond-to("sm") {
+            width: 80vw;
+
+         }
+        }
+
+        .content.close {
+            width: 0;
             transition: all 0.3s ease-in-out;
 
-    }
-     .content.close{
-        width: 0;
-            transition: all 0.3s ease-in-out;
+        }
 
-    }
         .content {
             width: 0;
             height: 600px;
@@ -47,51 +54,55 @@
             align-items: start;
             background-color: rgb(255, 255, 255);
             padding-bottom: 0.5rem;
-               h1{
-        background-color: #fabc58;
-        width: 100%;
-        text-align: center;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        font-size: 28px;
-        font-weight: 500;
-        text-transform: uppercase;
-        color: rgb(58, 58, 58);
-    }
-         
-            .itemlist{
+
+            h1 {
+                background-color: #fabc58;
+                width: 100%;
+                text-align: center;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                font-size: 28px;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: rgb(58, 58, 58);
+    
+            }
+
+            .itemlist {
                 display: flex;
                 flex-direction: row;
                 justify-content: start;
                 align-items: center;
                 margin: 10px 10px;
                 overflow: hidden;
-                h3{
+
+                h3 {
                     color: $primary-blue;
                     font-size: 20px;
                     font-weight: 400;
                     cursor: pointer;
                 }
-                .icons{
-                 color: $primary-blue;
-                 font-size: 15px;
-                 width: 35px !important;
-                 min-width: 35px;
-                 border-radius: 50%;
-                 height: 35px;
-                 border: 1px solid rgba(128, 128, 128, 0.363);
-                color: $primary-blue;
-                opacity: 0.9;
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;
-                 margin-right: 5px;
+
+                .icons {
+                    color: $primary-blue;
+                    font-size: 15px;
+                    width: 35px !important;
+                    min-width: 35px;
+                    border-radius: 50%;
+                    height: 35px;
+                    border: 1px solid rgba(128, 128, 128, 0.363);
+                    color: $primary-blue;
+                    opacity: 0.9;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 5px;
 
                 }
             }
-            
+
         }
-      
+
         .btn {
             transform: translate(52px, 0) rotate(90deg) scale(-1);
             background-color: white;
@@ -99,11 +110,18 @@
             padding: 7px 20px;
             border-radius: 0;
             cursor: pointer;
-
-            &.true{
+         @include respond-to("sm") {
+            transform: translate(52px, 30vh) rotate(90deg) scale(-1);
+            transition: all 0.3s ease;
+                   }
+            &.true {
                 background-color: #fabc58;
+                   @include respond-to("sm") {
+            transform: translate(52px, 0) rotate(90deg) scale(-1);
+        
+                   }
             }
-           
+
         }
 
     }
@@ -126,7 +144,10 @@
             font-weight: 500;
             text-align: center;
             font-family: "Playfair Display", serif;
-
+ @include respond-to("sm") {
+            font-size: 30px;
+        
+     }
         }
 
         p {
@@ -137,6 +158,10 @@
             letter-spacing: 0.4px;
             font-size: 20px;
             max-width: 800px;
+             @include respond-to("sm") {
+ font-size: 16px;
+            max-width: 90vw;        
+     }
 
         }
 
@@ -180,7 +205,7 @@
         &:hover {
             scale: 102%;
         }
-     
+
     }
 
     .items::before {
@@ -205,6 +230,13 @@
     gap: 3rem;
     padding: 10rem 0;
 
+    @include respond-to("sm") {
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        padding: 2rem 10px;
+    }
+
     .left {
         img {
             width: 400px;
@@ -212,20 +244,43 @@
             margin-top: 10px;
             height: 100%;
             object-fit: cover;
+
+            @include respond-to("sm") {
+                width: 100%;
+
+            }
         }
     }
 
     .right {
         width: 50%;
 
+        @include respond-to("sm") {
+            width: 100%;
+
+        }
+
         h3 {
             font-weight: 500;
             color: $primary-blue;
             font-size: 38px;
+
+            @include respond-to("sm") {
+                font-size: 25px;
+
+            }
         }
 
         p {
             max-width: 80%;
+
+            @include respond-to("sm") {
+                max-width: 100%;
+                line-height: $mob-paraline;
+
+
+
+            }
         }
 
         button {
@@ -245,6 +300,11 @@
 .mv-section {
     padding: 6rem 30px;
     background: linear-gradient(135deg, #fabc58);
+
+    @include respond-to("sm") {
+        padding: 2rem 10px;
+
+    }
 }
 
 .mv-container {
@@ -258,6 +318,11 @@
     margin-bottom: 40px;
     color: $primary-blue;
     position: relative;
+     @include respond-to("sm") {
+ font-size: $mob-heading;
+    margin-bottom: 5px;
+    }
+    
 }
 
 .mv-heading::after {
@@ -275,6 +340,10 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
+     @include respond-to("sm") {
+    gap: 0px;
+
+     }
 }
 
 .mv-card {
@@ -283,6 +352,10 @@
     max-width: 500px;
     transition: transform 0.3s ease;
     text-align: left;
+     @include respond-to("sm") {
+    padding: 10px;
+
+     }
 }
 
 
@@ -293,66 +366,87 @@
     margin-bottom: 15px;
     border-left: 6px solid $primary-blue;
     padding-left: 15px;
+     @include respond-to("sm") {
+ font-size: $mob-heading;
+    margin-bottom: 5px;
+    padding-left: 5px;
+        border-left: 4px solid $primary-blue;
+
+    }
 }
 
 .mv-text {
     font-size: 1rem;
     color: #303030;
     line-height: 1.7;
+     @include respond-to("sm") {
+  font-size:$mob-para;
+    line-height: $mob-paraline;
+     }
 }
 
 
 
 // /program-details-main///
 
-.program_details-main{
+.program_details-main {
     padding: 5rem 50px;
-    .title-main{
+
+    .title-main {
         font-size: 45px;
     }
-    p{
+
+    p {
         font-size: 17px;
     }
 
-    h2{
+    h2 {
         font-size: 35px;
         font-weight: 500;
         color: $primary-blue;
         text-transform: capitalize;
     }
-    .desc{
+
+    .desc {
         max-width: 70vw;
     }
-    h4{
+
+    h4 {
         color: $primary-blue;
         font-size: 20px;
         text-transform: capitalize;
     }
-    .career-opportunity{
+
+    .career-opportunity {
         margin-left: 20px;
-        h3{
+
+        h3 {
             color: $primary-blue;
             font-size: 25px;
             font-weight: 500;
             max-width: 800px;
             text-transform: capitalize;
         }
-        div{
+
+        div {
             margin-bottom: 4rem;
-            li{
+
+            li {
                 color: rgb(49, 49, 49);
                 font-size: 18px;
             }
         }
     }
-    .button-course{
+
+    .button-course {
         background-color: $primary-blue;
         color: white;
         padding: 7px 20px;
 
 
     }
-    .bos-grid{
+
+    .bos-grid {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -362,62 +456,65 @@
 }
 
 
-.program-table{
-   display: flex;
-   justify-content: start;
-   align-items: start;
+.program-table {
+    display: flex;
+    justify-content: start;
+    align-items: start;
     width: 100%;
     padding-bottom: 2rem;
-.table-container {
-    width: 60vw;
-  font-family: 'Segoe UI', sans-serif;
-  border: 1px solid rgba(195, 200, 247, 0.61);
-  border-radius: 10px;
-  overflow: hidden;
-}
 
-.ug-programs-table {
-  width: 100%;
-  border-collapse: collapse;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-}
+    .table-container {
+        width: 60vw;
+        font-family: 'Segoe UI', sans-serif;
+        border: 1px solid rgba(195, 200, 247, 0.61);
+        border-radius: 10px;
+        overflow: hidden;
+    }
 
-.ug-programs-table th,
-.ug-programs-table td {
-  padding: 12px 16px;
-  text-align: left;
-  border-bottom: 1px solid #d0d3fa;
-}
+    .ug-programs-table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    }
 
-.ug-programs-table thead {
-  background-color: #031372;
-  color: white;
-  font-size: 20px;
+    .ug-programs-table th,
+    .ug-programs-table td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #d0d3fa;
+    }
 
-}
-.cat-heading{
-    font-weight: 500;
+    .ug-programs-table thead {
+        background-color: #031372;
+        color: white;
+        font-size: 20px;
 
-}
+    }
 
-.category-row td {
-  background-color: #e2e2e2;
-  font-size: 18px;
-  color: black;
-}
-
-.items{
-    color: black;
-    cursor: pointer;
-    
-    &:hover{
-        color: $primary-blue;
+    .cat-heading {
         font-weight: 500;
+
     }
-}
-.header{
-    th{
-        font-weight: 600;
+
+    .category-row td {
+        background-color: #e2e2e2;
+        font-size: 18px;
+        color: black;
     }
-}
+
+    .items {
+        color: black;
+        cursor: pointer;
+
+        &:hover {
+            color: $primary-blue;
+            font-weight: 500;
+        }
+    }
+
+    .header {
+        th {
+            font-weight: 600;
+        }
+    }
 }

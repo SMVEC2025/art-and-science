@@ -12807,6 +12807,13 @@ a.social-insta {
 .tp-about-tutor-subtitle {
   margin-bottom: 15px;
 }
+.tp-about-tutor-area {
+  margin-top: 50px;
+  @media (max-width:550px) {
+    margin-top: 0;
+    
+  }
+}
 .tp-about-tutor-subtitle span {
   display: inline-block;
   height: 46px;
@@ -16221,6 +16228,12 @@ a.social-insta {
   padding: 5px 54px 52px 54px;
   margin-top: -8px;
    height: 150px;
+   @media (max-width:600px){
+    height:fit-content;
+  padding:  5px 10px;
+  padding-bottom: 20px;
+
+   }
 }
 .tp-tutor-content p {
   color: white;
