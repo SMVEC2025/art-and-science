@@ -5,6 +5,7 @@ import TopHeader from './components/header/TopHeader';
 import Footer from './components/footer/Footer';
 import InstantForm from './components/form/InstantForm';
 import MobileSidebarMenu from './components/header/MobileSidebarMenu';
+import ScrollToTop from './components/scrolltotop/ScrollToTop';
 
 const MainLayout = ({ children }) => {
   return (
@@ -12,6 +13,7 @@ const MainLayout = ({ children }) => {
       <Navbar />
       <InstantForm/>
       <MobileSidebarMenu/>
+      <ScrollToTop/>
       <TopHeader/>
       <main>{children}</main>
       <Footer />

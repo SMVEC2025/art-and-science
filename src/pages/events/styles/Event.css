@@ -76,7 +76,7 @@ span {
 
 body {
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  scroll-behavior: auto !important;
   font-family: var(--paraFont);
   color: var(--paraColor);
 }

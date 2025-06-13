@@ -14,6 +14,7 @@ import './Home.scss'
 import { useContext, useEffect } from "react"
 import { AppContext } from "../../context/AppContext"
 import Placements from "./component/Placements"
+import ScrollToTop from "../../components/scrolltotop/ScrollToTop"
 function Index() {
   const {setCurrentPage}=useContext(AppContext)
   useEffect(() => {
@@ -39,6 +40,7 @@ function Index() {
   }
   return (
     <div>
+      <ScrollToTop/>
       <Hero />
       <About />
       <Counter />

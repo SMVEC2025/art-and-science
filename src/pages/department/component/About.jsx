@@ -6,7 +6,7 @@ function About({data}) {
   return (
     <div className='ug-about'>
         <div className='left'>
-         <img src="https://images.pexels.com/photos/4476375/pexels-photo-4476375.jpeg" alt="" />
+         <img src={data.image} alt="" />
         </div>
         <div className='right'>
             <h3>{data.heading}</h3>

@@ -2311,7 +2311,7 @@ div.demo img {
   z-index: 1000;
   transition: 0.3s linear;
   overflow-y: scroll;
-  overscroll-behavior-y: contain;
+  scroll-behavior: auto !important;
   scrollbar-width: none;
 }
 .offcanvas__area::-webkit-scrollbar {
