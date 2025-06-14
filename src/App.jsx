@@ -43,6 +43,8 @@ import MediaStudies from './pages/department/pages/MediaStudies';
 import Calender from './pages/calender/Index'
 //noticeboard
 import NoticeBoard from './pages/noticeboard/NoticeBoard'
+//test
+import PanoramaViewer from './pages/test/PanoramaViewer'
 
 function App() {
   return (
@@ -69,7 +71,7 @@ function App() {
           <Route path="/admission" element={<Admission />}/>
           <Route path="/contact-us" element={<ContactUs />}/> 
           <Route path="/map" element={<Map />} /> 
-          <Route path="/test" element={<Test />} /> 
+          <Route path="/test" element={<PanoramaViewer />} /> 
           {/* <Route path="*" element={<NotFound />} /> */}
           <Route path="/calender" element={<Calender />} /> 
           <Route path="/calendar" element={<Calender />} /> 
