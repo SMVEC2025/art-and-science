@@ -79,9 +79,9 @@ const ThreeSixtyViewer = ({ imageUrl }) => {
     };
 
     return (
-        <div style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden' }}>
+        <div style={{ position: 'relative', width: '100vw', height: '98vh', overflow: 'hidden' }}>
             {/* ... your buttons ... */}
-
+           <button style={{position:'absolute',right:"50px",bottom:"100px",zIndex:"10"}} onClick={()=>{handleEnterVRClick}}>VR</button>
             <Scene ref={sceneRef}> {/* The ref is set here to the React component instance */}
                 <a-sky src={`/assets/img/360/canteen.jpg`}></a-sky>
                 <a-camera user-was-moved="true"></a-camera>
