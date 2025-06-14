@@ -44,13 +44,14 @@ import Calender from './pages/calender/Index'
 //noticeboard
 import NoticeBoard from './pages/noticeboard/NoticeBoard'
 //test
-import PanoramaViewer from './pages/test/Test'
+import PanoramaViewer from './pages/test/Index'
 
 function App() {
   return (
     <>
     <AppProvider>
      <Router>
+      
       <MainLayout>
         <Routes>
           <Route path="/" element={<Home />} /> 

@@ -1,14 +1,18 @@
 import React, { useRef, useEffect, useState } from 'react';
 import 'aframe';
 import { Scene, Entity } from 'aframe-react';
-import { LuMoveLeft,LuMoveRight } from "react-icons/lu";
+import { LuMoveLeft, LuMoveRight } from "react-icons/lu";
 import { BsHeadsetVr } from "react-icons/bs";
+import { IoMdHome } from "react-icons/io";
+import VirtualTourHeader from '../../components/header/VirtualTourHeader';
 
 const ThreeSixtyViewer = ({ imageUrl }) => {
     const sceneRef = useRef(null);
     const [isMobile, setIsMobile] = useState(false);
     const [inVRMode, setInVRMode] = useState(false);
-
+    const [splitImage, setSplitImage] = useState(false)
+    const [alive, setAlive] = useState(false)
+    const [showSidebar,setShowSidebar] = useState(false)
     useEffect(() => {
         // --- Mobile Detection ---
         const checkIfMobile = () => {
@@ -63,7 +67,7 @@ const ThreeSixtyViewer = ({ imageUrl }) => {
     // Rest of your component code remains the same...
 
     const handleEnterVRClick = () => {
-        
+
         // Also access the .el property here for entering VR
         if (sceneRef.current && sceneRef.current.el && sceneRef.current.el.tagName === 'A-SCENE') {
             sceneRef.current.el.enterVR(); // Call enterVR on the A-Frame element
@@ -80,19 +84,69 @@ const ThreeSixtyViewer = ({ imageUrl }) => {
             console.warn("Attempted to exit VR, but A-Frame scene DOM element is not available.");
         }
     };
+    function handleGridClose() {
+        setSplitImage(false)
+    }
+    function handleEnter() {
+        setAlive(true)
+        setSplitImage(true)
+    }
+    function handleBoxLeave() {
+        setAlive(false)
+    }
+    function handleLeave() {
 
+        setSplitImage(false)
+
+    }
+    console.log("alive,", alive)
     return (
         <div className='tsv-main'>
-            <Scene ref={sceneRef}  vr-mode-ui="enabled: false"> {/* The ref is set here to the React component instance */}
+
+            <VirtualTourHeader />
+            <Scene ref={sceneRef}  > {/* The ref is set here to the React component instance */}
                 <a-sky src={`/assets/img/360/new/garden1.jpg`}></a-sky>
                 <a-camera user-was-moved="true"></a-camera>
             </Scene>
             <div className='footer'>
-              <div className='left'><LuMoveLeft/></div>
-              <div className='center' onClick={handleEnterVRClick}><BsHeadsetVr/></div>
-              <div className='right'><LuMoveRight/></div>
+                <div className='left'><LuMoveLeft /></div>
+                <div className='center' onClick={handleEnterVRClick}><BsHeadsetVr /></div>
+                <div className='right'><LuMoveRight /></div>
+            </div>
+
+
+            {/* ///listing images */}
+
+            <div className={`listing-images ${splitImage ? 'spread' : ''}`} onMouseLeave={handleLeave}>
+
+                <div className='items' onMouseEnter={handleEnter}>
+                    <img src="/assets/img/360/images/one.png" alt="" />
+                </div >
+                <div className='items' onMouseEnter={handleEnter}>
+                    <img src="/assets/img/360/images/one.png" alt="" />
+                </div >
+                <div className='items' onMouseEnter={handleEnter}>
+                    <img src="/assets/img/360/images/one.png" alt="" />
+                </div >
+
+
+            </div>
+
+            <div className={`left_bar ${showSidebar?"show":""}`}
+            onMouseEnter={()=>{setShowSidebar(true)}}
+            onMouseLeave={()=>{setShowSidebar(false)}}
+            >
+                <div className='bar'>
+                    <span className='true'>Campus</span>
+                    <span >Labs</span>
+                    <span >Facilities</span>
+                     
+                </div>
+
             </div>
         </div>
+
+
     );
 };
 
