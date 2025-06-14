@@ -20,6 +20,8 @@
     "@photo-sphere-viewer/markers-plugin": "^5.13.3",
     "@photo-sphere-viewer/video-plugin": "^5.13.3",
     "@photo-sphere-viewer/virtual-tour-plugin": "^5.13.3",
+    "aframe": "^1.7.1",
+    "aframe-react": "^4.4.0",
     "axios": "^1.9.0",
     "bootstrap": "^5.3.6",
     "date-fns": "^4.1.0",

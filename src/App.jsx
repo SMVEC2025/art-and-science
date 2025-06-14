@@ -44,7 +44,7 @@ import Calender from './pages/calender/Index'
 //noticeboard
 import NoticeBoard from './pages/noticeboard/NoticeBoard'
 //test
-import PanoramaViewer from './pages/test/PanoramaViewer'
+import PanoramaViewer from './pages/test/Test'
 
 function App() {
   return (
