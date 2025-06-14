@@ -83,7 +83,7 @@ const ThreeSixtyViewer = ({ imageUrl }) => {
 
     return (
         <div className='tsv-main'>
-            <Scene ref={sceneRef}> {/* The ref is set here to the React component instance */}
+            <Scene ref={sceneRef}  vr-mode-ui="enabled: false"> {/* The ref is set here to the React component instance */}
                 <a-sky src={`/assets/img/360/new/garden1.jpg`}></a-sky>
                 <a-camera user-was-moved="true"></a-camera>
             </Scene>
