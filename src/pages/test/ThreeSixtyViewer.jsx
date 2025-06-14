@@ -61,6 +61,7 @@ const ThreeSixtyViewer = ({ imageUrl }) => {
     // Rest of your component code remains the same...
 
     const handleEnterVRClick = () => {
+        
         // Also access the .el property here for entering VR
         if (sceneRef.current && sceneRef.current.el && sceneRef.current.el.tagName === 'A-SCENE') {
             sceneRef.current.el.enterVR(); // Call enterVR on the A-Frame element
@@ -81,7 +82,7 @@ const ThreeSixtyViewer = ({ imageUrl }) => {
     return (
         <div style={{ position: 'relative', width: '100vw', height: '98vh', overflow: 'hidden' }}>
             {/* ... your buttons ... */}
-           <button style={{position:'absolute',right:"50px",bottom:"100px",zIndex:"10"}} onClick={()=>{handleEnterVRClick}}>VR</button>
+           <button style={{position:'absolute',right:"50px",bottom:"100px",zIndex:"10",border:'1px solid red',padding:"100px"}} onClick={handleEnterVRClick}>VR</button>
             <Scene ref={sceneRef}> {/* The ref is set here to the React component instance */}
                 <a-sky src={`/assets/img/360/canteen.jpg`}></a-sky>
                 <a-camera user-was-moved="true"></a-camera>
