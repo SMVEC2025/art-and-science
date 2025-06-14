@@ -5,7 +5,7 @@ import ThreeSixtyViewer from './ThreeSixtyViewer'
 function Test() {
  
   return (
-    <div>
+    <div className='tsv-global'>
         <ThreeSixtyViewer/>
     </div>
   )

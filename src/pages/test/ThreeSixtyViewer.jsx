@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import 'aframe';
 import { Scene, Entity } from 'aframe-react';
+import { LuMoveLeft,LuMoveRight } from "react-icons/lu";
+import { BsHeadsetVr } from "react-icons/bs";
 
 const ThreeSixtyViewer = ({ imageUrl }) => {
     const sceneRef = useRef(null);
@@ -80,13 +82,16 @@ const ThreeSixtyViewer = ({ imageUrl }) => {
     };
 
     return (
-        <div style={{ position: 'relative', width: '100vw', height: '98vh', overflow: 'hidden' }}>
-            {/* ... your buttons ... */}
-           <button style={{position:'absolute',right:"50px",bottom:"100px",zIndex:"10",border:'1px solid red',padding:"100px"}} onClick={handleEnterVRClick}>VR</button>
+        <div className='tsv-main'>
             <Scene ref={sceneRef}> {/* The ref is set here to the React component instance */}
-                <a-sky src={`/assets/img/360/canteen.jpg`}></a-sky>
+                <a-sky src={`/assets/img/360/new/garden1.jpg`}></a-sky>
                 <a-camera user-was-moved="true"></a-camera>
             </Scene>
+            <div className='footer'>
+              <div className='left'><LuMoveLeft/></div>
+              <div className='center' onClick={handleEnterVRClick}><BsHeadsetVr/></div>
+              <div className='right'><LuMoveRight/></div>
+            </div>
         </div>
     );
 };
